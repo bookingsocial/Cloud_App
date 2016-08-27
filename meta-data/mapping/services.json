@@ -1,0 +1,48 @@
+	{
+		"sfApiName": "BKSL2__Service__c",
+		"sfFields": {
+			"Name": {
+				"apiName": "Name",
+				"type": "text"
+			},
+			"Active": {
+				"apiName": "BKSL2__Active__c",
+				"type": "boolean"
+			},
+			"Description": {
+				"apiName": "BKSL2__Description__c",
+				"type": "textarea"
+			},
+			"DisplayType": {
+				"apiName": "BKSL2__Display_Type__c",
+				"type": "text"
+			},
+			"DurationTime": {
+				"apiName": "BKSL2__Duration_Time__c",
+				"type": "text"
+			},
+			"DurationUnit": {
+				"apiName": "BKSL2__Duration_Unit__c",
+				"type": "text"
+			},
+			"PreferredExpert": {
+				"apiName": "BKSL2__Preferred_Expert__c",
+				"type": "lookup"
+			},
+			"Working_Hour": {
+				"apiName": "BKSL2__Working_Hours__c",
+				"type": "text"
+			},
+			"Provider": {
+				"apiName": "BKSL2__Provider__c",
+				"type": "text"
+			},
+			"Salesforce_Id": {
+				"apiName": "Id",
+				"type": "Id"
+			}
+		},
+		"sfDefault": {
+			"BKSL2__Is_Cloud_Service__c": true
+		}
+	}

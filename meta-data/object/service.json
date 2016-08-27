@@ -1,0 +1,72 @@
+	{
+		"type": "object",
+		"sfMapping" : true,
+		"fields": [
+				   {
+					"fieldname": "Name",
+					"label": "Name",
+					"type": "text",
+					"validations": [  
+					  {  
+						"fieldname": "Name",
+						"required": true,
+						"failureMessage": "Name required"
+					  }
+					]
+				  },
+				  
+				 {
+					"fieldname": "Description",
+					"label": "Description",
+					"type": "text"				
+					
+				  },
+				  {
+					"fieldname": "Active",
+					"label": "Active",
+					"type": "boolean"
+				  },
+			    {
+					"fieldname": "DisplayType",
+					"label": "DisplayType",
+					"type": "text"
+				  },
+				 {
+					"fieldname": "DurationTime",
+					"label": "DurationTime",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "DurationUnit",
+					"label": "DurationUnit",
+					"type": "text"
+				
+				  },
+				  {
+					"fieldname": "PreferredExpert",
+					"label": "PreferredExpert",
+					"type": "lookup",				
+					"labelfield": "Name",
+					"relatedobject" : "experts" 
+				  },
+								  
+				  {
+					"fieldname": "Provider",
+					"label": "Provider",
+					"type": "text"
+				  },
+				  { 
+					"fieldname": "Working_Hour",
+					"label": "Working Hour",
+					"labelfield": "Name",
+					"type": "lookup",				
+					"relatedobject" : "working_hours" 
+				  },
+				  {
+					"fieldname": "Salesforce_Id",
+					"label": "Salesforce Id",
+					"type": "text"
+				  }
+							
+			]
+	}

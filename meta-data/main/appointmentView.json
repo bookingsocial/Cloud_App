@@ -1,0 +1,11 @@
+	{
+		"title": "contact",
+		"sections": [
+						{ 
+							title: 'Overview',
+							fields: [
+								'Contact_Id', 'Expert_Id', 'Id', 'Name', Salesforce_Id, Service_Id, Start_Date, Status
+							]
+						}
+					]
+	}

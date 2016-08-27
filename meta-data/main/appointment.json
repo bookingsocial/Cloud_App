@@ -1,0 +1,76 @@
+	{
+		"type": "object",
+		"fields": [
+				  {
+					"fieldname": "Contact_Id",
+					"label": "Contact Id",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "End_Date",
+					"label": "End Date",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Expert_Id",
+					"label": "Expert Id",
+					"type": "text"
+				
+				  },
+				  {
+					"fieldname": "Id",
+					"label": "Phone",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "LastModifiedDate",
+					"label": "LastModifiedDate",
+					"type": "text"
+					
+					
+				  },
+				  {
+					"fieldname": "Name",
+					"label": "Name",
+					"type": "text"
+					
+				  },
+				  {
+					"fieldname": "Organization_Id",
+					"label": "Organization Id",
+					"type": "text"					
+				  },
+				  {
+					"fieldname": "Provider",
+					"label": "Provider",
+					"type": "text"
+					
+					
+				  },
+				  {
+					"fieldname": "Salesforce_Id",
+					"label": "Salesforce_Id",
+					"type": "text"				
+					
+				  },
+				  {
+					"fieldname": "Service_Id",
+					"label": "Service Id",
+					"type": "text"
+					
+					
+				  },
+				  {
+					"fieldname": "Start_Date",
+					"label": "Start Date",
+					"type": "text"				
+					
+				  },
+				  {
+					"fieldname": "Status",
+					"label": "Status",
+					"type": "text"				
+					
+				  }
+				]
+	}

@@ -1,0 +1,11 @@
+	
+	<script>
+		console.log('fieldtest'+field);
+		var buildListViewTableHeader ='<tr>';
+		for(key in field){
+			buildListViewTableHeader +='<th>'+field[key].label+'</th>'
+		}
+		buildListViewTableHeader +='</tr>';
+	
+	</script>
+	

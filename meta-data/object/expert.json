@@ -1,0 +1,76 @@
+	{
+		"type": "object",
+		"fields": [
+				  
+				 {
+					"fieldname": "Provider",
+					"label": "Provider",
+					"type": "text"				
+					
+				  }, 
+			    {
+					"fieldname": "Active",
+					"label": "Active",
+					"type": "text"
+				  },
+				   {  
+					"fieldname": "Name",
+					"label": "Name",
+					"type": "text",
+					"validations": [  
+					  {
+						"fieldname": "Name",
+						"required": true,
+						"failureMessage": "Name required"
+					  }
+					]
+				  },
+				 {
+					"fieldname": "Email",
+					"label": "Email",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Phone",
+					"label": "Phone",
+					"type": "text"
+				
+				  }, 
+				  {
+					"fieldname": "Salesforce_Id",
+					"label": "Salesforce Id",
+					"type": "text"
+				  },
+				  
+				  {
+					"fieldname": "Date_Format",
+					"label": "Date Format",
+					"type": "text"				
+					
+				  },
+				 {
+					"fieldname": "Call_Notification",
+					"label": "Call Notification",
+					"type": "boolean"
+				  },
+				  
+				  {
+					"fieldname": "SMS_Notification",
+					"label": "SMS Notification",
+					"type": "boolean"
+				  }, 
+				  {
+					"fieldname": "Email_Notification",
+					"label": "Email Notification",
+					"type": "boolean"
+				  },
+				  { 
+					"fieldname": "Working_Hour",
+					"label": "Working Hour",
+					"labelfield": "Name",
+					"type": "lookup",				
+					"relatedobject" : "working_hours" 
+				  }  
+							
+			]
+	}

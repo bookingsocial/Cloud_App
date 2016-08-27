@@ -1,0 +1,30 @@
+	{
+		"title": "Working Hour",
+		"sections": [
+						{ 
+							"title": "Details",
+							"fields": [
+								"Name","Active"
+							]
+						},{ 
+							"title": "Business Hour",
+							"fields": [
+								"Monday_Start_Time",
+								"Monday_End_Time",
+								"Tuesday_Start_Time",
+								"Tuesday_End_Time",
+								"Wednesday_Start_Time",
+								"Wednesday_End_Time",
+								"Thursday_Start_Time",
+								"Thursday_End_Time",
+								"Friday_Start_Time",
+								"Friday_End_Time",
+								"Saturday_Start_Time",
+								"Saturday_End_Time",
+								"Sunday_Start_Time",
+								"Sunday_End_Time"
+							]
+						}
+						
+					]
+	}  

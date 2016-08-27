@@ -1,0 +1,49 @@
+	{
+		"title": "Expert login Details",
+		"tabs": [	
+					{
+						"URL" : "booking/",
+						"tabName" : "Dashboard",
+						"icon" : "fa fa-dashboard",
+						"activeTab" : "Dashboard"
+
+					}, 
+					{
+						"URL" : "booking/calendar",
+						"tabName" : "Calendar",
+						"icon" : "fa fa-calendar",
+						"activeTab" : "Calendar"
+
+					}, 
+					{
+						"URL" : "bksl/001",
+						"tabName" : "Contacts",
+						"icon" : "fa fa-user",
+						"activeTab" : "Contacts"   
+
+					}, 
+					{
+						"URL" : "bksl/a08",
+						"tabName" : "Appointments",
+						"icon" : "fa fa-book",
+						"activeTab" : "Appointments"
+					}
+				],
+		"objects": [ 
+					{
+						"objId" : "a08",
+						"objectName" : "appointments",
+						"object" : "appointment.json",
+						"layout" : "appointmentView.json",
+						"listView" : "appointmentListView.json"		
+					},
+				  {
+						"objId" : "001",
+						"objectName" : "contacts",
+						"object" : "contact.json",
+						"layout" : "contactView.json",
+						"listView" : "contactListView.json"	
+					} 
+				]
+		
+	}

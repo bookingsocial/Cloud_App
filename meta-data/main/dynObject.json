@@ -1,0 +1,18 @@
+	{ 
+		"type": "object",
+		"object": [
+					 {
+						"id" : "003",
+						"object" : "contact.json",
+						"filter" : "contactView.json",
+						"listView" : "contactListView.json"	
+					 }, 
+					 {
+						"id" : "a08",
+						"object" : "appointment.json",
+						"filter" : "appointmentView.json",
+						"listView" : "appointmentListView.json"						
+					 }
+					 
+				 ]
+	}

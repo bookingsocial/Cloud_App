@@ -1,0 +1,79 @@
+	{
+		"type": "object",
+		"fields": [
+				   {
+					"fieldname": "Name",
+					"label": "Name",
+					"type": "text",
+					"validations": [  
+					  {  
+						"fieldname": "Name",
+						"required": true,
+						"failureMessage": "Name required"
+					  }
+					]
+				  },
+				  
+				 {
+					"fieldname": "Start_Date",
+					"label": "Start Date",
+					"type": "DateTime"				
+					 
+				  },
+			    {
+					"fieldname": "End_Date",
+					"label": "End Date",
+					"type": "DateTime"
+				  },
+				 {
+					"fieldname": "Service_Id",
+					"label": "Service Id",
+					"type": "text",
+					"validations": [  
+					  {  
+						"fieldname": "Service_Id",
+						"required": true, 
+						"failureMessage": "Service Id required"
+					  }
+					]
+				  },
+				  {
+					"fieldname": "Expert_Id",
+					"label": "Expert Id",
+					"type": "text"
+				
+				  },
+				  {
+					"fieldname": "Status",
+					"label": "Status",
+					"type": "text"				
+					
+				  },
+				 {
+					"fieldname": "LastModifiedDate",
+					"label": "LastModifiedDate",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Organization_Id",
+					"label": "Organization Id",
+					"type": "text"					
+				  },   
+				  {
+					"fieldname": "Contact_Id",
+					"label": "Contact Id",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Provider",
+					"label": "Provider",
+					"type": "text"   
+				  },
+				  {
+					"fieldname": "Salesforce_Id",
+					"label": "Salesforce Id",
+					"type": "text"
+				  }
+							
+			]
+	}

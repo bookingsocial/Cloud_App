@@ -1,0 +1,12 @@
+{
+	"title": "User",
+	"sections": [
+					{ 
+						"title": "Overview",
+						"fields": [
+							"username","password", "email"
+						]
+					}
+					 
+				]
+}   

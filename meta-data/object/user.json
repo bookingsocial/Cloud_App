@@ -1,0 +1,99 @@
+	{
+		"type": "object",
+		"fields": [ 
+				  
+				 {
+					"fieldname": "username",
+					"label": "Username",
+					"type": "text",
+					"validations": [  
+					  {  
+						"fieldname": "username",
+						"required": true,
+						"failureMessage": "Username Required"
+					  }
+					]				
+					 
+				  }, 
+			      {
+					"fieldname": "password",
+					"label": "Password",
+					"type": "text",
+					"validations": [  
+					  {  
+						"fieldname": "password",
+						"required": true,
+						"failureMessage": "Password Required"
+					  }
+					]
+				  },
+				 
+				  {
+					"fieldname": "activated",
+					"label": "Activated",
+					"type": "text"
+				  },
+				  {  
+					"fieldname": "created",
+					"label": "Created",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "last_ip",
+					"label": "Last_ip",
+					"type": "text"
+				
+				  }, 
+				    
+				  {
+					"fieldname": "last_login",
+					"label": "Last Login",
+					"type": "text"				
+					
+				  },
+				  {
+					"fieldname": "new_email",
+					"label": "New Email",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "email",
+					"label": "Email", 
+					"type": "text",
+					"validations": [  
+					  {  
+						"fieldname": "email",
+						"required": true,
+						"failureMessage": "Email Required"
+					  }
+					]
+				  },
+				  
+				  {
+					"fieldname": "new_email_key",
+					"label": "New Email Key",
+					"type": "text"
+				  }, 
+				  {
+					"fieldname": "new_password_key",
+					"label": "New Password Key",
+					"type": "text"
+				  },
+				  { 
+					"fieldname": "new_password_requested",
+					"label": "New Password Requested",
+					"type": "text"
+				  },
+				  { 
+					"fieldname": "uId",
+					"label": "UId",
+					"type": "text"
+				  },
+				  { 
+					"fieldname": "user_type",
+					"label": "User Type",
+					"type": "text"
+				  }  
+							
+			]
+	}

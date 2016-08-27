@@ -1,0 +1,21 @@
+	{
+		"title": "Contacts",  
+		"fields": [
+			{  
+				"label" : "First Name",
+				"ApiName" : "FirstName"
+			}, 
+			{
+				"label" : "Last Name", 
+				"ApiName" : "LastName"
+			},
+			{
+				"label" : "Email",
+				"ApiName" : "Email"
+			},
+			{
+				"label" : "Phone",
+				"ApiName" : "Mobile"
+			}
+		]
+	}

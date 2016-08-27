@@ -1,0 +1,34 @@
+	{
+		"title": "Experts",
+		"fields": [      
+			{
+				"label" : "Name",
+				"ApiName" : "Name"
+			}, 
+			{
+				"label" : "Phone",
+				"ApiName" : "Phone"
+			},
+			{  
+				"label" : "Email",
+				"ApiName" : "Email"
+			}, 
+			{
+				"label" : "SMS Notification",
+				"ApiName" : "SMS_Notification",
+				"type" : "boolean"
+			}, 
+			{
+				"label" : "Email Notification",
+				"ApiName" : "Email_Notification",
+				"type" : "boolean"
+			}, 
+			{
+				"label" : "Working Hour",
+				"ApiName" : "Working_Hour",
+				"labelfield": "Name",
+				"type": "lookup",				
+				"relatedobject" : "working_hours" 
+			}
+		]
+	}
