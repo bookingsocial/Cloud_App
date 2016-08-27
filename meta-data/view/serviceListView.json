@@ -1,0 +1,31 @@
+	{
+		"title": "Services",
+		"fields": [ 
+			{ 
+				"label" : "Name",
+				"ApiName" : "Name"
+			}, 
+			{
+				"label" : "Preferred Expert",
+				"ApiName" : "PreferredExpert",
+				"labelfield": "Name",
+				"type": "lookup",				
+				"relatedobject" : "experts" 
+			},
+			{  
+				"label" : "Provider",
+				"ApiName" : "Provider"
+			}, 
+			{ 
+				"label" : "Working Hour",
+				"ApiName" : "Working_Hour",
+				"labelfield": "Name",
+				"type": "lookup",				
+				"relatedobject" : "working_hours" 
+			}, 
+			{ 
+				"label" : "Duration Time",
+				"ApiName" : "DurationTime"
+			}
+		]
+	}

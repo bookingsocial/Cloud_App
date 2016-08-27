@@ -1,0 +1,4 @@
+<div class="form-group col-xs-12 col-md-6" >
+	<label for="{{fieldname}}">{{label}}:</label>
+	<select id='courses' class="form-control">{{#list}}<option  value='{{val}}'>{{title}}</option>{{/list}}</select>
+</div>    

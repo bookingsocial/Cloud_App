@@ -1,0 +1,38 @@
+	{
+		"title": "Contact login Details",
+		"tabs": [	
+					{
+						"URL" : "booking/",
+						"tabName" : "Dashboard",
+						"icon" : "fa fa-dashboard",
+						"activeTab" : "Dashboard",
+						"activeListTab" : "Dashboard"
+
+					},        
+					{
+						"URL" : "booking/newAppointment/", 
+						"tabName" : "New Appointment",
+						"icon" : "fa fa-plus",
+						"activeTab" : "New Appointment",
+						"activeListTab" : "New Appointment"
+					}
+					 
+				],  
+		"objects": [
+				 	{
+						"objId" : "001",
+						"objectName" : "contacts",
+						"object" : "contact.json",
+						"layout" : "contactView.json",
+						"listView" : "contactListView.json"	
+					}, 
+					{
+						"objId" : "a08",
+						"objectName" : "appointments",
+						"object" : "appointment.json",
+						"layout" : "appointmentView.json",
+						"listView" : "appointmentListView.json"		
+					}
+				]
+		
+	}

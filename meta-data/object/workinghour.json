@@ -1,0 +1,147 @@
+	{
+		"type": "object",
+		"sfMapping" : true,
+		"fields": [
+				   {
+					"fieldname": "Name",
+					"label": "Name",
+					"type": "text"
+				  },{
+					"fieldname": "Active",
+					"label": "Active",
+					"type": "boolean"
+				  },
+				 {
+					"fieldname": "Friday_Break_End_Time",
+					"label": "Friday Break End Time",
+					"type": "text"				
+					 
+				  },
+			    {
+					"fieldname": "Friday_Break_Start_Time",
+					"label": "Friday Break Start Time",
+					"type": "text"
+				  },
+				 {
+					"fieldname": "Friday_End_Time",
+					"label": "Friday End Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Friday_Start_Time",
+					"label": "Friday Start Time",
+					"type": "text"
+				
+				  },
+				  {
+					"fieldname": "Monday_Break_End_Time",
+					"label": "Monday Break End Time",
+					"type": "text"				
+					
+				  },
+				 {
+					"fieldname": "Monday_End_Time",
+					"label": "Monday End Time",
+					"type": "text"
+				  },{
+					"fieldname": "Monday_Start_Time",
+					"label": "Monday Start Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Saturday_Break_End_Time",
+					"label": "Saturday Break End Time",
+					"type": "text"					
+				  },   
+				  {
+					"fieldname": "Saturday_Break_Start_Time",
+					"label": "Saturday Break Start Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Saturday_End_Time",
+					"label": "Saturday Start Time",
+					"type": "text"   
+				  },
+				  {
+					"fieldname": "Sunday_Break_End_Time",
+					"label": "Sunday Break End Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Sunday_Break_Start_Time",
+					"label": "Sunday Break Start Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Sunday_End_Time",
+					"label": "Sunday End Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Sunday_Start_Time",
+					"label": "Sunday Start Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Thursday_Break_End_Time",
+					"label": "Thursday Break End Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Thursday_Break_Start_Time",
+					"label": "Thursday Break Start Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Thursday_End_Time",
+					"label": "Thursday End Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Thursday_Start_Time",
+					"label": "Thursday Start Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Tuesday_Break_End_Time",
+					"label": "Tuesday Break End Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Tuesday_Break_Start_Time",
+					"label": "Tuesday Break Start Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Tuesday_End_Time",
+					"label": "Tuesday End Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Tuesday_Start_Time",
+					"label": "Tuesday Start Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Wednesday_Break_End_Time",
+					"label": "Wednesday Break End Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Wednesday_Break_Start_Time",
+					"label": "Wednesday Break Start Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Wednesday_End_Time",
+					"label": "Wednesday End Time",
+					"type": "text"
+				  },
+				  {
+					"fieldname": "Wednesday_Start_Time",
+					"label": "Wednesday Start Time",
+					"type": "text"
+				  }
+			]
+	}

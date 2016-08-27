@@ -1,0 +1,14 @@
+	{
+		"title": "Working Hours",
+		"fields": [ 
+			{ 
+				"label" : "Name",
+				"ApiName" : "Name"
+			}, 
+			{
+				"label" : "Active",
+				"ApiName" : "Active",
+				"type" : "boolean"
+			}
+		]
+	}

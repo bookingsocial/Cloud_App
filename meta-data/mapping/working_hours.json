@@ -1,0 +1,133 @@
+	{
+		"sfApiName" : "BKSL2__Working_Hours__c",
+		"sfFields" : {
+			"Active" : {
+				"apiName": "BKSL2__Active__c",
+				"type": "text"
+			},
+			"Friday_Break_End_Time" : {
+				"apiName": "BKSL2__Friday_Break_End_Time__c",
+				"type": "text"
+			}, 
+			"Friday_Break_Start_Time" : {
+				"apiName": "BKSL2__Friday_Break_Start_Time__c",
+				"type": "text"
+			},
+			"Friday_End_Time" : {
+				"apiName": "BKSL2__Friday_End_Time__c",
+				"type": "text"
+			},
+			"Friday_Start_Time" : {
+				"apiName": "BKSL2__Friday_Start_Time__c",
+				"type": "text"
+			},
+			"Monday_Break_End_Time" : {
+				"apiName": "BKSL2__Monday_Break_End_Time__c",
+				"type": "text"
+			},
+			"Monday_Break_Start_Time" : {
+				"apiName": "BKSL2__Monday_Break_Start_Time__c",
+				"type": "text"
+			},
+			"Monday_End_Time" : {
+				"apiName": "BKSL2__Monday_End_Time__c",
+				"type": "text"
+			},
+			"Monday_Start_Time" : {
+				"apiName": "BKSL2__Monday_Start_Time__c",
+				"type": "text"
+			},
+			"Saturday_Break_End_Time" : {
+				"apiName": "BKSL2__Saturday_Break_End_Time__c",
+				"type": "text"
+			}, 
+			"Saturday_Break_Start_Time" : {
+				"apiName": "BKSL2__Saturday_Break_Start_Time__c",
+				"type": "text"
+			},
+			"Saturday_End_Time" : {
+				"apiName": "BKSL2__Saturday_End_Time__c",
+				"type": "text"
+			},
+			"Saturday_Start_Time" : {
+				"apiName": "BKSL2__Saturday_Start_Time__c",
+				"type": "text"
+			},
+			"Sunday_Break_End_Time" : {
+				"apiName": "BKSL2__Sunday_Break_End_Time__c",
+				"type": "text"
+			},
+			"Sunday_Break_Start_Time" : {
+				"apiName": "BKSL2__Sunday_Break_Start_Time__c",
+				"type": "text"
+			},
+			"Sunday_End_Time" : {
+				"apiName": "BKSL2__Sunday_End_Time__c",
+				"type": "text"
+			},
+			"Sunday_Start_Time" : {
+				"apiName": "BKSL2__Sunday_Start_Time__c",
+				"type": "text"
+			},
+			"Thursday_Break_End_Time" : {
+				"apiName": "BKSL2__Thursday_Break_End_Time__c",
+				"type": "text"
+			},
+			"Thursday_Break_Start_Time" : {
+				"apiName": "BKSL2__Thursday_Break_Start_Time__c",
+				"type": "text"
+			},
+			"Thursday_End_Time" : {
+				"apiName": "BKSL2__Thursday_End_Time__c",
+				"type": "text"
+			},
+			"Thursday_Start_Time" : {
+				"apiName": "BKSL2__Thursday_Start_Time__c",
+				"type": "text"
+			},
+			"Tuesday_Break_End_Time" : {
+				"apiName": "BKSL2__Tuesday_Break_End_Time__c",
+				"type": "text"
+			},
+			"Tuesday_Break_Start_Time" : {
+				"apiName": "BKSL2__Tuesday_Break_Start_Time__c",
+				"type": "text"
+			},
+			"Tuesday_End_Time" : {
+				"apiName": "BKSL2__Tuesday_End_Time__c",
+				"type": "text"
+			},
+			"Tuesday_Start_Time" : {
+				"apiName": "BKSL2__Tuesday_Start_Time__c",
+				"type": "text"
+			},
+			"Wednesday_Break_End_Time" : {
+				"apiName": "BKSL2__Wednesday_Break_End_Time__c",
+				"type": "text"
+			},
+			"Wednesday_Break_Start_Time" : {
+				"apiName": "BKSL2__Wednesday_Break_Start_Time__c",
+				"type": "text"
+			},
+			"Wednesday_End_Time" : {
+				"apiName": "BKSL2__Wednesday_End_Time__c",
+				"type": "text"
+			},
+			"Wednesday_Start_Time" : {
+				"apiName": "BKSL2__Wednesday_Start_Time__c",
+				"type": "text"
+			},
+			"Name" : {
+				"apiName": "BKSL2__Working_Hour_Name__c",
+				"type": "text"
+			},
+			"Working_Hours" : {
+				"apiName": "BKSL2__Working_Hours__c",
+				"type": "text"
+			},
+			"Salesforce_Id" : {
+				"apiName": "Id",
+				"type": "Id"
+			}
+		}
+	}

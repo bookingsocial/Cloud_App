@@ -1,0 +1,8 @@
+<div class="col-xs-12 col-md-6">
+	<div class="col-xs-4 col-md-4" style="text-align: -webkit-right;">
+		<label for="{{fieldname}}">{{label}}</label>
+	</div>
+	<div class="col-xs-8 col-md-8">
+		<select id='{{fieldname}}'  name='{{fieldname}}' class="form-control"><option  value='{{value}}'>{{lookupName}}</option></select>
+	</div> 
+</div>   

@@ -1,0 +1,17 @@
+	{
+		"title": "Appointments",   
+		"fields": [  
+			{
+				"label" : "Name", 
+				"ApiName" : "Name"
+			}, 
+			{
+				"label" : "Start Date",
+				"ApiName" : "Start_Date"
+			},
+			{
+				"label" : "Status",
+				"ApiName" : "Status"
+			}
+		]
+	}

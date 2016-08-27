@@ -1,0 +1,17 @@
+{
+	"title": "Users",   
+	"fields": [
+		{
+			"label" : "Username",
+			"ApiName" : "username"
+		}, 
+		{
+			"label" : "Password",
+			"ApiName" : "password" 
+		},
+		{  
+			"label" : "Email",
+			"ApiName" : "email"
+		}
+	] 
+}
