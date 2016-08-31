@@ -1,0 +1,100 @@
+	{
+		"title": "Admin login Details",
+		"tabs": [	
+					{ 
+						"URL" : "booking/",
+						"tabName" : "Dashboard", 
+						"icon" : "fa fa-dashboard",
+						"activeTab" : "Dashboard",
+						"activeListTab" : "Dashboard"
+
+					},   
+					{
+						"URL" : "bksl/a05",
+						"tabName" : "Experts",
+						"icon" : "fa fa-user",
+						"activeTab" : "Expert",
+						"activeListTab" : "Experts"
+
+					},
+					{
+						"URL" : "bksl/a09",
+						"tabName" : "Services",
+						"icon" : "fa fa-book",
+						"activeTab" : "Service",
+						"activeListTab" : "Services"
+					},
+					{
+						"URL" : "bksl/001",
+						"tabName" : "Contacts",
+						"icon" : "fa fa-user",
+						"activeTab" : "Contact",
+						"activeListTab" : "Contacts"
+
+					},{    
+						"URL" : "bksl/a04",
+						"tabName" : "Working Hours",
+						"icon" : "fa fa-clock-o", 
+						"activeTab" : "Working Hour", 
+						"activeListTab" : "Working Hours"
+					},
+					{ 
+						"URL" : "bksl/a08",
+						"tabName" : "Appointments",
+						"icon" : "fa fa-book",
+						"activeTab" : "Appointment",
+						"activeListTab" : "Appointments"
+					},
+					{    
+						"URL" : "bksl/users",
+						"tabName" : "Users",
+						"icon" : "fa fa-user", 
+						"activeTab" : "User", 
+						"activeListTab" : "Users"
+					}  
+				],
+		"objects": [ 
+				 	{
+						"objId" : "001",
+						"objectName" : "contacts",
+						"object" : "contact.json",
+						"layout" : "contactView.json",
+						"listView" : "contactListView.json"	
+					}, 
+					{ 
+						"objId" : "a08",
+						"objectName" : "appointments",
+						"object" : "appointment.json",
+						"layout" : "appointmentView.json",
+						"listView" : "appointmentListView.json"		
+					},
+					{
+						"objId" : "a05",
+						"objectName" : "experts", 
+						"object" : "expert.json",
+						"layout" : "expertView.json",
+						"listView" : "expertListView.json"	
+					}, 
+					{
+						"objId" : "a09",  
+						"objectName" : "services", 
+						"object" : "service.json",
+						"layout" : "serviceView.json",
+						"listView" : "serviceListView.json"		
+					},
+					{
+						"objId" : "002",
+						"objectName" : "users", 
+						"object" : "user.json",
+						"layout" : "userView.json",
+						"listView" : "userListView.json"	
+					},{
+						"objId" : "a04",
+						"objectName" : "working_hours", 
+						"object" : "workinghour.json",
+						"layout" : "workinghourView.json",
+						"listView" : "workinghourListView.json"	
+					}  
+				]
+		
+	}

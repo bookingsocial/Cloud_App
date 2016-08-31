@@ -1,0 +1,12 @@
+	{
+		"title": "Appointments",
+		"sections": [    
+						{ 
+							"title": "Overview",
+							"fields": [
+								"Name","Start_Date","End_Date","Status"
+							]
+						}
+						
+					]   
+	}  
