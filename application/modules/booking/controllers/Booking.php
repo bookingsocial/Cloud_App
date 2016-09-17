@@ -74,7 +74,7 @@ class Booking extends MX_Controller
 			$page = array(); 
 			$page['showHeader'] = TRUE; 
 			$page['showFooter'] = TRUE;
-			$page['page_name'] = 'Admin/dashboard';
+			$page['page_name'] = 'admin/dashboard';
 			$page['title'] = 'Dashboard';
 			$page['data'] = $data;
 			//echo $expertId;

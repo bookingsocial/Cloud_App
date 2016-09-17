@@ -13,7 +13,7 @@
 		{{/isBooleanType}}
 		{{^isBooleanType}}
 			{{#isLookup}}
-				<p><a href="{{lookupURL}}"/>{{value}}</a></p>
+					<p><a href="{{lookupURL}}"/>{{value}}</a></p>
 			{{/isLookup}}
 			{{^isLookup}}
 				<p>{{value}}</p>

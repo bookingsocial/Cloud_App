@@ -118,9 +118,10 @@
     function checkForLookUp($key){
 	   $result = '';
 	   if(relatedObjectData.hasOwnProperty($key)){
-		   $result = relatedObjectData[$key];
+				$result = relatedObjectData[$key];
+			return '<a href="'+_baseURL+'bksl/'+$result.urlId+'">'+$result.value+'</a>';
 		}
-		return '<a href="'+_baseURL+'bksl/'+$key+'">'+$result+'</a>';
+		return  $result;
     }	
 	$('#listTable').DataTable(
 	{ 

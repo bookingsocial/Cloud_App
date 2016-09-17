@@ -158,9 +158,9 @@
 		});*/
 		$('#createNewUser').on('click',function(event){
 			event.preventDefault();
-			var userCreateURL = '<?php echo base_url();?>bksl/ajaxHandler/create_user'
+			var userCreateURL = '<?php echo base_url();?>bksl/ajaxhandler/create_user'
 			 var inputData = {};
-			 inputData['user_type'] = 'CONTACT';
+			 inputData['user_type'] = selectedVal;
 			 //if(selectedVal == 'EXPERT'){
 			 	//inputData['related_to'] = expertDropDown.val();
 				//if(mapExpData.hasOwnProperty(inputData['related_to']))

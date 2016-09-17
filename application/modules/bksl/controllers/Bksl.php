@@ -76,7 +76,7 @@ class Bksl extends CI_Controller {
 				$page = array();
 				$page['showHeader'] = TRUE;
 				$page['showFooter'] = TRUE;
-				$page['page_name'] = 'Expert/Profile';     
+				$page['page_name'] = 'expert/Profile';     
 				$page['title'] = 'Profile';
 				$page['data'] = $data;
 				//print_r($data);exit;
@@ -89,7 +89,7 @@ class Bksl extends CI_Controller {
 				$page = array(); 
 				$page['showHeader'] = TRUE; 
 				$page['showFooter'] = TRUE;
-				$page['page_name'] = 'Admin/Dashboard';
+				$page['page_name'] = 'admin/Dashboard';
 				$page['title'] = 'Dashboard';
 				$page['data'] = $data;
 				//echo $expertId;
@@ -183,7 +183,7 @@ class Bksl extends CI_Controller {
 					$page = array();
 					$page['showHeader'] = TRUE;
 					$page['showFooter'] = TRUE;
-					$page['page_name'] = 'Expert/editProfile';   
+					$page['page_name'] = 'expert/editProfile';   
 					$page['title'] = 'Edit Profile';     
 					$page['data'] = $data;   
 					//print_r($data);exit;
@@ -255,7 +255,11 @@ class Bksl extends CI_Controller {
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
-								$relatedObjectData[$value[$k]->Salesforce_Id] = $value[$k]->Name;
+								if($value[$k]->Salesforce_Id != '' && $value[$k]->Salesforce_Id != NULL)
+									$relatedObjectData[$value[$k]->Salesforce_Id] =array("value" => array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId),"urlId"=>$value[$k]->uId);
+								else
+									$relatedObjectData[$value[$k]->uId] = $value[$k]->Name;
+								
 							}
 						}
 						$data ['relatedObjectData'] = json_encode($relatedObjectData);
@@ -322,7 +326,10 @@ class Bksl extends CI_Controller {
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
-								$relatedObjectData[$value[$k]->Salesforce_Id] = $value[$k]->Name;
+								if($value[$k]->Salesforce_Id != '' && $value[$k]->Salesforce_Id != NULL)
+									$relatedObjectData[$value[$k]->Salesforce_Id] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
+								else
+									$relatedObjectData[$value[$k]->uId] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
 							}
 						}
 						$data ['relatedObjectData'] = json_encode($relatedObjectData);
@@ -388,7 +395,10 @@ class Bksl extends CI_Controller {
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
-								$relatedObjectData[$value[$k]->Salesforce_Id] = $value[$k]->Name;
+								if($value[$k]->Salesforce_Id != '' && $value[$k]->Salesforce_Id != NULL)
+									$relatedObjectData[$value[$k]->Salesforce_Id] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
+								else
+									$relatedObjectData[$value[$k]->uId] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
 							}
 						}
 						$data ['relatedObjectData'] = json_encode($relatedObjectData);
@@ -469,7 +479,10 @@ class Bksl extends CI_Controller {
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
-								$relatedObjectData[$value[$k]->Salesforce_Id] = $value[$k]->Name;
+								if($value[$k]->Salesforce_Id != '' && $value[$k]->Salesforce_Id != NULL)
+									$relatedObjectData[$value[$k]->Salesforce_Id] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
+								else
+									$relatedObjectData[$value[$k]->uId] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
 							}
 						}
 						$data ['relatedObjectData'] = json_encode($relatedObjectData);
@@ -533,7 +546,10 @@ class Bksl extends CI_Controller {
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
-								$relatedObjectData[$value[$k]->Salesforce_Id] = $value[$k]->Name;
+								if($value[$k]->Salesforce_Id != '' && $value[$k]->Salesforce_Id != NULL)
+									$relatedObjectData[$value[$k]->Salesforce_Id] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
+								else
+									$relatedObjectData[$value[$k]->uId] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
 							}
 						}
 						$data ['relatedObjectData'] = json_encode($relatedObjectData);
@@ -597,7 +613,10 @@ class Bksl extends CI_Controller {
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
-								$relatedObjectData[$value[$k]->Salesforce_Id] = $value[$k]->Name;
+								if($value[$k]->Salesforce_Id != '' && $value[$k]->Salesforce_Id != NULL)
+									$relatedObjectData[$value[$k]->Salesforce_Id] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
+								else
+									$relatedObjectData[$value[$k]->uId] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
 							}
 						}
 						$data ['relatedObjectData'] = json_encode($relatedObjectData);
@@ -764,7 +783,10 @@ class Bksl extends CI_Controller {
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
-								$relatedObjectData[$value[$k]->Salesforce_Id] = $value[$k]->Name;
+								if($value[$k]->Salesforce_Id != '' && $value[$k]->Salesforce_Id != NULL)
+									$relatedObjectData[$value[$k]->Salesforce_Id] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
+								else
+									$relatedObjectData[$value[$k]->uId] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
 							}
 						}
 						$data ['relatedObjectData'] = json_encode($relatedObjectData);
@@ -825,7 +847,10 @@ class Bksl extends CI_Controller {
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
-								$relatedObjectData[$value[$k]->Salesforce_Id] = $value[$k]->Name;
+								if($value[$k]->Salesforce_Id != '' && $value[$k]->Salesforce_Id != NULL)
+									$relatedObjectData[$value[$k]->Salesforce_Id] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
+								else
+									$relatedObjectData[$value[$k]->uId] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
 							}
 						}
 						$data ['relatedObjectData'] = json_encode($relatedObjectData);
@@ -886,7 +911,10 @@ class Bksl extends CI_Controller {
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
-								$relatedObjectData[$value[$k]->Salesforce_Id] = $value[$k]->Name;
+								if($value[$k]->Salesforce_Id != '' && $value[$k]->Salesforce_Id != NULL)
+									$relatedObjectData[$value[$k]->Salesforce_Id] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
+								else
+									$relatedObjectData[$value[$k]->uId] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
 							}
 						}
 						$data ['relatedObjectData'] = json_encode($relatedObjectData);

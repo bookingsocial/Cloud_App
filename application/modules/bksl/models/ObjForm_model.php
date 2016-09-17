@@ -20,10 +20,11 @@ class objForm_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->row();
 	}
-	 function getDetailsBySalesforceId($Salesforce_Id,$selObjectName,$organizationId){	 
+	 function getDetailsBySalesforceId($record_Id,$selObjectName,$organizationId){	 
 		$this->db->select('*');
 		$this->db->from($selObjectName);
-		$this->db->where('Salesforce_Id', $Salesforce_Id); 
+		$where = '(Salesforce_Id="'. $record_Id.'" or uId = "'. $record_Id.'")';
+        $this->db->where($where);
 		$this->db->where('Organization_Id', $organizationId);
 		$query = $this->db->get();
 		return $query->row();
@@ -49,7 +50,7 @@ class objForm_model extends CI_Model {
 	}
 	function objectSearch($term,$object,$organizationId)
 	{
-		$query = $this->db->query("SELECT Id,Salesforce_Id,Name FROM ".$object." WHERE Id LIKE '%".$term."%' OR Salesforce_Id LIKE '%".$term."%' OR Name LIKE '%".$term."%' AND Organization_Id ='".$organizationId."'");
+		$query = $this->db->query("SELECT Id,Salesforce_Id,Name,uId FROM ".$object." WHERE Id LIKE '%".$term."%' OR Salesforce_Id LIKE '%".$term."%' OR Name LIKE '%".$term."%' AND Organization_Id ='".$organizationId."'");
 		return $query->result();
 	}
 	function getRecordsById($organizationId,$selObjectName,$provider){
@@ -65,7 +66,7 @@ class objForm_model extends CI_Model {
 	function getRelatedListObjects($organizationId,$relatedObjects,$provider){
 		$result = [];
 		foreach ($relatedObjects as $key => $value){
-			$selectedFields ='Id,Salesforce_Id,Name';
+			$selectedFields ='Id,Salesforce_Id,uId,Name';
 			$this->db->select($selectedFields);
 			$this->db->from($key);
 			$this->db->where('Organization_Id', $organizationId);
@@ -90,7 +91,6 @@ class objForm_model extends CI_Model {
 	 
 	function deleteRecord($OrgDetails,$uId, $selObjectName){
 		//echo $selObjectName; exit;  
-		
 		$this->db->select('*');
 		$this->db->from($selObjectName);
 		$this->db->where('uId', $uId);

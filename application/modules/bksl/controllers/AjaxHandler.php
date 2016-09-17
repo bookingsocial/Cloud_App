@@ -102,7 +102,7 @@ class AjaxHandler extends CI_Controller  {
     	$response = [];
     	for ($i = 0; $i < count($result); $i++) {
     		$response[] = array(
-    				"id" => $result[$i]->Salesforce_Id,
+    				"id" => ($result[$i]->Salesforce_Id != NULL && $result[$i]->Salesforce_Id != '') ? $result[$i]->Salesforce_Id : $result[$i]->uId,
     				"text" => $result[$i]->Name 
     		);  
     	}

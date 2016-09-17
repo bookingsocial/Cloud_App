@@ -34,7 +34,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="/" class="logo">
+        <a href="<?php echo base_url();?>" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini">Cloud</span>
           <!-- logo for regular state and mobile devices -->
@@ -89,10 +89,6 @@
                     </div>
                   </li>
                 </ul>
-              </li>
-              <!-- Control Sidebar Toggle Button data-toggle="control-sidebar"-->
-              <li>
-                <a href="<?php echo base_url('bksl/company_information'); ?>" ><i class="fa fa-gears"></i></a>
               </li>
             </ul>
           </div>
