@@ -13,12 +13,12 @@ if ( ! function_exists('getAllAppointments'))
 }
 if ( ! function_exists('getAllUsers'))
 {
-    function getAllUsers($organizationId)
+    function getAllUsers($organizationId,$current_userId)
     {
 			$ci=& get_instance();
 			$ci->load->database(); 
 
-			$ci->db->where(array('Organization_Id' => $organizationId));
+			$ci->db->where(array('Organization_Id' => $organizationId,'Id !=' => $current_userId));			
 			return $ci->db->count_all_results('users');
     }   
 }
