@@ -30,19 +30,30 @@
 // -------------------------------------------------------------
      
 (function(){ 
+	
+	var FieldVal;
+	var count = 0; 
+	
 	function comp_fields_text_init(config, field){
-		var deferred = $.Deferred();
+		
 		 $.get(_baseURL + '/layout/fields/text.mst', function(template) {
-			var rendered = Mustache.render(template, field);
-			$('#' + config.root).append(rendered);
-			 deferred.resolve();
+			 var rendered;
+			 FieldVal = field;
+			 if(count === 0){
+				 rendered = Mustache.render(template, field);
+			 }else{
+				 rendered = Mustache.render(template, FieldVal);
+			 }
+			$('#' + config.root).append(rendered);			  
+			 count++;
+		}).pipe(function(p){
+			return true;
 		});
-		return deferred;
 	}
 	window.comp_fields_text_init = comp_fields_text_init;
 	
+	
 	function comp_fields_textView_init(config, field){
-		var deferred = $.Deferred();
 			if(field.visibleType == "boolean"){
 				field.isBooleanType = true;
 				if(field.value == 1 ){
@@ -54,31 +65,46 @@
 				field.isBooleanType = false;
 			}
 			$.get(_baseURL + '/layout/fields/textView.mst', function(template) {
-				var rendered = Mustache.render(template, field);
+				 var rendered;
+				 FieldVal = field;
+				 if(count === 0){
+					 rendered = Mustache.render(template, field);
+				 }else{
+					 rendered = Mustache.render(template, FieldVal);
+				 }
+				
 				$('#' + config.root).append(rendered);
-				deferred.resolve();
+			}).pipe(function(p){
+				return true;
 			});
-			return deferred;
 	}
 	window.comp_fields_textView_init = comp_fields_textView_init;
 	
 	function comp_fields_picklist_init(config, field){
-		var deferred = $.Deferred();
 		$.get(_baseURL + '/layout/fields/picklist.mst', function(template) {
 			console.log(field);
 			for(var i=0;i< field.pickval.length;i++){
 				if(field.pickval[i].val === field.value)
 					field.pickval[i].selected = field.value ? "selected" : "";
 			}
-			var rendered = Mustache.render(template, field);
+			
+			 var rendered;
+			 FieldVal = field;
+			 if(count === 0){
+				 rendered = Mustache.render(template, field);
+			 }else{
+				 rendered = Mustache.render(template, FieldVal);
+			 }
+			
 			$('#' + config.root).append(rendered);
-			deferred.resolve();
+		}).pipe(function(p){
+			return true;
 		});
-		return deferred;
 	}      
 	window.comp_fields_picklist_init = comp_fields_picklist_init;
+	
+	
 	function comp_fields_lookup_init(config, field){
-			var deferred = $.Deferred();
 			$.get(_baseURL + '/layout/fields/lookup.mst', function(template) {
 			var rendered_lookup = Mustache.render(template,field);
 			$('#' + config.root).append(rendered_lookup);
@@ -114,26 +140,24 @@
 				  },
 				  minimumInputLength: 2,
 				});
-				deferred.resolve();
+		}).pipe(function(p){
+			return true;
 		});
-		return deferred;
 	}  
 	window.comp_fields_lookup_init = comp_fields_lookup_init;
 
 	function comp_fields_DateTime_init(config, field){
-		var deferred = $.Deferred();
 		$.get(_baseURL + '/layout/fields/date.mst', function(template) {
 			var rendered_date = Mustache.render(template, field);
 			$('#' + config.root).append(rendered_date);
 			$('#'+field.fieldname).datepicker();
-			deferred.resolve();
+		}).pipe(function(p){
+			return true;
 		});  
-		return deferred;
 	}  
 	window.comp_fields_DateTime_init = comp_fields_DateTime_init;
 	
 	function comp_fields_Checkbox_init(config, field){
-		var deferred = $.Deferred();
 		if(field.type =="boolean"){
 			if(field.value == 1 ){
 				field.value = true;
@@ -144,31 +168,29 @@
 		$.get(_baseURL + '/layout/fields/checkbox.mst', function(template) {
 			var rendered_checkbox = Mustache.render(template, field);
 			$('#' + config.root).append(rendered_checkbox);
-			deferred.resolve();
-		}); 
-		return deferred;
+		}).pipe(function(p){
+			return true;
+		});
 	}  
 	window.comp_fields_Checkbox_init = comp_fields_Checkbox_init;
 	
 	function comp_fields_listviewHeader_init(config, field){
-		var deferred = $.Deferred();
 		$('#ListViewHeader').html('');
 		$.get(_baseURL + '/layout/fields/listviewHeader.mst', function(template) {
 			var rendered_listview = Mustache.render(template, field);
 			$('#ListViewHeader').append(rendered_listview);
-			deferred.resolve();
+		}).pipe(function(p){
+			return true;
 		});
-		return deferred;
 	}
 	window.comp_fields_listviewHeader_init = comp_fields_listviewHeader_init;
 	function comp_Section_Header_init(config, field){
-		var deferred = $.Deferred();
 		 $.get(_baseURL + '/layout/sectionHeader.mst', function(template) {
 			var rendered_sectionHeader = Mustache.render(template, field);
 			$('#' + config.root).append(rendered_sectionHeader);
-			deferred.resolve();
+		}).pipe(function(p){
+			return true;
 		});
-		return deferred;
 	}
 	window.comp_Section_Header_init = comp_Section_Header_init;
 })();
@@ -178,79 +200,144 @@
 // Filename:		processor/fields.js
 // Description:		Creates the text type fields for dynamic forms
 // -------------------------------------------------------------
+(function() {
+    function buildFieldArr(fields) {
+        var fieldArr = {};
+        for (var pi in fields) {
+            fieldArr[fields[pi].fieldname] = fields[pi];
+        }
+        return fieldArr;
+    }
+    window.buildFieldArr = buildFieldArr;
 
-(function(){
-	function buildFieldArr(fields){
-		var fieldArr = {};
-		for(var pi in fields){
-			fieldArr[fields[pi].fieldname]= fields[pi];  
-		}
-		return fieldArr;
-	}
-	window.buildFieldArr = buildFieldArr;
-	
-	function processor_fields(config, fields, layout){
-		var fieldArr = buildFieldArr(fields);
-		for(var lay in layout){
-			var layer = layout[lay];
-			comp_Section_Header_init(config, layer);
-			for ( var i = 0, l = layer.fields.length; i < l; i++ ) {
-				//for(var layfield in layer.fields){
-				//	for(var pi in fields){
-				//		var field = fields[pi];  
-						if(fieldArr.hasOwnProperty(layer.fields[i])){
-							var field = fieldArr[layer.fields[i]];  
-							if(field.type == 'text'){
-								comp_fields_text_init(config, field);
-							}
-							else if(field.type == 'picklist'){  
-								comp_fields_picklist_init(config, field);
-							} 
-							else if(field.type == 'textView'){ 
-								comp_fields_textView_init(config, field);
-							}
-							else if(field.type == 'lookup'){ 
-								comp_fields_lookup_init(config, field);
-							}
-							else if(field.type == 'DateTime'){     
-								comp_fields_DateTime_init(config, field);
-							} 
-							else if(field.type == 'boolean'){
-								comp_fields_Checkbox_init(config,field);
-							}
-							if(field.hasOwnProperty('validations')){
-								for(var pf in field.validations){ 
-									processor_validation_add(field.validations[pf]);
-								}
-							}
-					}
-				//}
-			}
-		} 
-	}
-	window.processor_fields = processor_fields;
-	
-	/*function processor_listviewBody(config, fieldVal, fieldLayout){
-		
-		for(var pi in fields){
-			var field = fields[pi]; 
-				comp_fields_listview_init(config, field);
-			
-		}
-	}
-	window.processor_listviewBody = processor_listviewBody;*/
-	
-	function processor_listviewHeader(config, dataListView){
-		
-		for(var pi in dataListView){
-			var field = dataListView[pi]; 
-				comp_fields_listviewHeader_init(config, field);
-			
-		}
-	}
-	window.processor_listviewHeader = processor_listviewHeader;
+    function processor_fields(config, fields, layout) {
+        var fieldArr = buildFieldArr(fields);
+        $.get(_baseURL + '/layout/objectLayout.mst', function(template) {
+            for (var lay in layout) {
+                var layer = layout[lay];
+                var fieldsToRender = [];
+                for (var i = 0, l = layer.fields.length; i < l; i++) {
+                    //for(var layfield in layer.fields){
+                    //	for(var pi in fields){
+                    //		var field = fields[pi];  
+                    if (fieldArr.hasOwnProperty(layer.fields[i])) {
+                        var field = fieldArr[layer.fields[i]];
 
-	
+                        if (field.type == 'text') {
+                            field.type_text = true;
+                            //comp_fields_text_init(config, field);
+                        } else if (field.type == 'picklist') {
+                            for (var p = 0; p < field.pickval.length; i++) {
+                                if (field.pickval[p].val === field.value)
+                                    field.pickval[p].selected = field.value ? "selected" : "";
+                            }
+                            field.type_picklist = true;
+                            //comp_fields_picklist_init(config, field);
+                        } else if (field.type == 'textView') {
+                           if (field.visibleType == "boolean") {
+                                field.isBooleanType = true;
+                                if (field.value == 1) {
+                                    field.value = true;
+                                } else {
+                                    field.value = false;
+                                }
+                            } else {
+                                field.isBooleanType = false;
+                            }
+                            field.type_textView = true;
+                            //comp_fields_textView_init(config, field);
+                        } else if (field.type == 'lookup') {
+                            field.type_lookup = true;
+                            //comp_fields_lookup_init(config, field);
+                        } else if (field.type == 'DateTime') {
+                            field.type_DateTime = true;
+                            //comp_fields_DateTime_init(config, field);
+                        } else if (field.type == 'boolean') {
+                           
+                            field.type_boolean = true;
+                            //comp_fields_Checkbox_init(config,field);
+                        }
+                        /*if(field.hasOwnProperty('validations')){
+                        	for(var pf in field.validations){ 
+                        		processor_validation_add(field.validations[pf]);
+                        	}
+                        }*/
+                        fieldsToRender.push(field);
+                    }
+                    //}
+                }
+
+                var rendered = Mustache.render(template, {
+                    'fields': fieldsToRender,
+                    'title': layer.title
+                });
+
+                $('#' + config.root).append(rendered);
+                for (var k = 0; k < fieldsToRender.length; k++) {
+                    var fieldType = fieldsToRender[k];
+                    if (fieldType.type_lookup) {
+                        $("#" + fieldType.fieldname).select2({
+                            ajax: {
+                                url: _baseURL + "bksl/ajaxHandler/objectSearch",
+                                dataType: 'json',
+                                delay: 250,
+                                data: function(params) {
+                                    return {
+                                        term: params.term, // search term
+                                        object: field.relatedobject,
+                                        orgId: config.orgId,
+                                        page: params.page
+                                    };
+                                },
+                                processResults: function(data, params) {
+                                    // parse the results into the format expected by Select2
+                                    // since we are using custom formatting functions we do not need to
+                                    // alter the remote JSON data, except to indicate that infinite
+                                    // scrolling can be used
+                                    params.page = params.page || 1;
+
+                                    return {
+                                        results: data.items,
+                                        pagination: {
+                                            more: (params.page * 20) < data.total_count
+                                        }
+                                    };
+                                },
+                                cache: true
+                            },
+                            minimumInputLength: 2,
+                        });
+                    } else if (fieldType.type_DateTime) {
+                        $('#' + fieldType.fieldname).datepicker();
+                    }
+                }
+            }
+        })
+
+    }
+    window.processor_fields = processor_fields;
+
+    /*function processor_listviewBody(config, fieldVal, fieldLayout){
+    	
+    	for(var pi in fields){
+    		var field = fields[pi]; 
+    			comp_fields_listview_init(config, field);
+    		
+    	}
+    }
+    window.processor_listviewBody = processor_listviewBody;*/
+
+    function processor_listviewHeader(config, dataListView) {
+
+        for (var pi in dataListView) {
+            var field = dataListView[pi];
+            comp_fields_listviewHeader_init(config, field);
+
+        }
+    }
+    window.processor_listviewHeader = processor_listviewHeader;
+
+
 })();
 
 // end of file
