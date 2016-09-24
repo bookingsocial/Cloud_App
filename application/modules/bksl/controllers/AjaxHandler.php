@@ -235,36 +235,65 @@ class AjaxHandler extends CI_Controller  {
 	}
 	function create_user()
 	{
+		$this->db->trans_begin();  
 		$email_activation = true;
 		$data['errors'] = array();
 		$data = $this->input->post();
-		if (!is_null($data = $this->tank_auth->create_user($data,$email_activation))) {									// success
-
-			$data['site_name'] = $this->config->item('website_name', 'tank_auth');
-
-			if ($email_activation) {									// send "activate" email
-				$data['activation_period'] = $this->config->item('email_activation_expire', 'tank_auth') / 3600;
-
-				$this->_send_email('activate', $data['email'], $data);
-
-				unset($data['password']); // Clear password (just for any case)
-
-				$this->_show_message($this->lang->line('auth_message_registration_completed_1'));
-
-			} else {
-				if ($this->config->item('email_account_details', 'tank_auth')) {	// send "welcome" email
-
-					$this->_send_email('welcome', $data['email'], $data);
+		try{
+			if (!is_null($data = $this->tank_auth->create_user($data,$email_activation))) {									// success
+	
+				$data['site_name'] = $this->config->item('website_name', 'tank_auth');
+	
+				if ($email_activation) {									// send "activate" email
+					$data['activation_period'] = $this->config->item('email_activation_expire', 'tank_auth') / 3600;
+	
+					$this->_send_email('activate', $data['email'], $data);
+	
+					unset($data['password']); // Clear password (just for any case)
+	
+					//$this->tank_auth->_show_message($this->lang->line('auth_message_registration_completed_1'));
+	
+				} else {
+					if ($this->config->item('email_account_details', 'tank_auth')) {	// send "welcome" email
+	
+						$this->_send_email('welcome', $data['email'], $data);
+					}
+					unset($data['password']); // Clear password (just for any case)
+	
+					//$this->tank_auth->_show_message($this->lang->line('auth_message_registration_completed_2').' '.anchor('/bksl/auth/login/', 'Login'));
 				}
-				unset($data['password']); // Clear password (just for any case)
-
-				$this->_show_message($this->lang->line('auth_message_registration_completed_2').' '.anchor('/bksl/auth/login/', 'Login'));
+				$this->db->trans_commit();  
+			} else {
+    			$this->db->trans_rollback();
+				$errors = $this->tank_auth->get_error_message();
+				foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
+				$data['errorType'] =  'JSON';
 			}
-		} else {
-			$errors = $this->tank_auth->get_error_message();
-			foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
+		}catch(exception $e){
+    		$this->db->trans_rollback();
+			$data['errors'] = $e->getMessage(); 
+			$data['errorType'] =  'HTML';		
 		}
 		echo json_encode($data);exit;
+	}
+	/**
+	 * Send email message of given type (activate, forgot_password, etc.)
+	 *
+	 * @param	string
+	 * @param	string
+	 * @param	array
+	 * @return	void
+	 */
+	function _send_email($type, $email, &$data)
+	{
+		$this->load->library('email');
+		$this->email->from($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));
+		$this->email->reply_to($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));
+		$this->email->to($email);
+		$this->email->subject(sprintf($this->lang->line('auth_subject_'.$type), $this->config->item('website_name', 'tank_auth')));
+		$this->email->message($this->load->view('email/'.$type.'-html', $data, TRUE));
+		$this->email->set_alt_message($this->load->view('email/'.$type.'-txt', $data, TRUE));
+		$this->email->send();
 	}
 }
 

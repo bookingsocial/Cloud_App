@@ -2,7 +2,7 @@
 	  <div class="box">
 		<div class="box-header">
 			<h3 class="box-title">
-				<a href="<?php echo base_url();?>booking/newuser" class="btn btn-sm btn-primary">New User</a>
+				<a href="<?php echo base_url();?>bksl/newuser" class="btn btn-sm btn-primary">New User</a>
 			</h3>
 		  <div class="box-tools">
 			  <?php echo $pagination; ?>
@@ -29,7 +29,7 @@
 						<td><?php echo $usertList[$i]->banned; ?></td>
 						<td><?php echo $usertList[$i]->ban_reason; ?></td>
 						<td><?php echo $usertList[$i]->user_type; ?></td>
-                        <td style="width: 20px"><a href="<?php echo base_url();?>booking/viewuser/<?php echo $usertList[$i]->id; ?>" class="btn btn-sm btn-info">VIEW</a></td>
+                        <td style="width: 20px"><a href="<?php echo base_url();?>bksl/viewuser/<?php echo $usertList[$i]->id; ?>" class="btn btn-sm btn-primary">VIEW</a></td>
                     </tr>
                     <?php } ?>
                 </tbody>

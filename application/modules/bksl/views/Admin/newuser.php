@@ -1,21 +1,7 @@
-<link rel="stylesheet" href="<?php echo base_url();?>js/lib/plugins/iCheck/all.css">
-<div class="modal fade" id="alertModal">
-<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">×</span></button>
-			<h4 class="modal-title">Warning</h4>
-		</div>
-		<div class="modal-body" id="errorMessage">
-		</div>
-	</div>
-	<!-- /.modal-content -->
-</div>
-<!-- /.modal-dialog -->
-</div>
 <div class="box">
     <div class="box-body">
+    	<div id="errorMessage" style="color: red;">
+		</div>
 		 <div class="register-box" style="width: 60%;">
 		  <!--<div class="row">
  			  <div class="col-md-3">
@@ -116,7 +102,7 @@
 </div>
 <!-- Select2 -->
 <script src="<?php echo base_url();?>js/lib/plugins/select2/select2.full.min.js"></script>
-<script src="<?php echo base_url();?>js/lib/plugins/iCheck/icheck.min.js"></script>
+<!--<script src="<?php echo base_url();?>js/lib/plugins/iCheck/icheck.min.js"></script>-->
 <script>
 	  var contactDetails = <?php echo json_encode($contactDetails);?>;
 	  //var expertDetails = <?php echo json_encode($expertDetails);?>;
@@ -158,9 +144,10 @@
 		});*/
 		$('#createNewUser').on('click',function(event){
 			event.preventDefault();
-			var userCreateURL = '<?php echo base_url();?>bksl/ajaxhandler/create_user'
+			$(this).attr('disabled',true);
+			var userCreateURL = '<?php echo base_url();?>bksl/ajaxHandler/create_user'
 			 var inputData = {};
-			 inputData['user_type'] = selectedVal;
+			 inputData['user_type'] = 'CONTACT';
 			 //if(selectedVal == 'EXPERT'){
 			 	//inputData['related_to'] = expertDropDown.val();
 				//if(mapExpData.hasOwnProperty(inputData['related_to']))
@@ -178,28 +165,28 @@
 				   url: userCreateURL,
 				   data: $.param(inputData),
 				   error: function(error) {
+				   		 $(this).attr('disabled',false);
 						 var sHTML = $.parseHTML(error.responseText);
 							$.each(sHTML, function (i, el) {
 								 if(el.nodeName == 'div' || el.nodeName == 'Div')
 										$('#errorMessage').html(el.nodeValue);
-									//el.nodeValue = actual value of the node.
 							});
-							 	$('#alertModal').modal({
-									keyboard: false
-								});
 				   },
 				   success: function(data) {
-					  console.log(data);
 						 data = $.parseJSON(data);
-						 if(data.hasOwnProperty('errors')){
+						 if(data.hasOwnProperty('errors') && data.errorType ='JSON'){
+						 	if(data.errors != ''){
+						 		$(this).attr('disabled',false);
 							  var errors = '';
 							  for(var a in data.errors){
 									errors += '<p>'+data.errors[a]+'</p><br/>';
 								}
 							  $('#errorMessage').html(errors);
-							 	$('#alertModal').modal({
-									keyboard: false
-								});
+							}if(data.hasOwnProperty('errors') && data.errorType ='HTML'){
+							  $('#errorMessage').html(data.errors);
+							}else{
+								window.location = '/bksl/users';
+							}
 						 }
 						
 				   },
