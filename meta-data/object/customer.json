@@ -1,7 +1,7 @@
 	{
 		"type": "object",
 		"fields": [
-				   {
+				   { 
 					"fieldname": "Organization_Id",
 					"label": "Organization Id",
 					"type": "text"
@@ -85,12 +85,26 @@
 					"label": "MailingPostalCode",
 					"type": "text"
 					
+				  },
+					{ 
+					"fieldname": "Account",
+					"label": "Account",
+					"labelfield": "Name",
+					"type": "lookup",				
+					"relatedobject" : "Account" 
 				  },  
 					{
 					"fieldname": "Employee_Size",
 					"label": "Employee Size",
 					"type": "text"
 					
-				  }
+				  },
+					{ 
+					"fieldname": "Lead",
+					"label": "Lead",
+					"labelfield": "Name",
+					"type": "lookup",				
+					"relatedobject" : "Lead" 
+				  }  
 				]
 	}

@@ -2,22 +2,16 @@
 		"type": "object",
 		"fields": [
 				   {
-					"fieldname": "Organization_Id",
-					"label": "Organization Id",
+					"fieldname": "Company",
+					"label": "Company",
 					"type": "text"
 				  },
-				   {
-					"fieldname": "Salesforce_Id",
-					"label": "Salesforce Id",
-					"type": "text"
-				  },
-				   {
+				  {
 					"fieldname": "uId",
 					"label": "UId",
 					"type": "text"
-				  },  
-				  
-				  {
+				  },
+          {
 					"fieldname": "FirstName",
 					"label": "First Name",
 					"type": "text"
@@ -54,43 +48,59 @@
 				  },
 				
 				  {
-					"fieldname": "Description",
-					"label": "Description",
+					"fieldname": "Street",
+					"label": "Street",
 					"type": "text"
 				  },
 				  
 				  {
-					"fieldname": "MailingStreet",
-					"label": "MailingStreet",
+					"fieldname": "City",
+					"label": "City",
 					"type": "text"
 				  },
 				  {
-					"fieldname": "MailingCity",
-					"label": "MailingCity",
+					"fieldname": "State",
+					"label": "State",
 					"type": "text"
 				  },
 				  {
-					"fieldname": "MailingState",
-					"label": "MailingState",
+					"fieldname": "Country",
+					"label": "Country",
 					"type": "text"
 					
 				  },
 				  {
-					"fieldname": "MailingCountry",
-					"label": "MailingCountry",
+					"fieldname": "Zip",
+					"label": "Zip",
 					"type": "text"
 				  },
 				  {
-					"fieldname": "MailingPostalCode",
-					"label": "MailingPostalCode",
+					"fieldname": "Description",
+					"label": "Description",
 					"type": "text"
 					
-				  },  
-					{
+				  },
+					{ 
 					"fieldname": "Employee_Size",
 					"label": "Employee Size",
 					"type": "text"
 					
-				  }
+				  },
+					{
+					"fieldname": "Source",
+					"label": "Source",
+					"type": "picklist"
+					"pickval":[
+            { 
+              "Web", 
+              "Phone Inquery",
+              "Partner",
+              "Paid Add",
+              "Social Media"
+            
+            }
+            ]
+				  } 
+			
 				]
 	}

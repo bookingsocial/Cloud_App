@@ -51,7 +51,15 @@
 						"icon" : "fa fa-user", 
 						"activeTab" : "User", 
 						"activeListTab" : "Users"
-					}  
+					}, 
+					{    
+						"URL" : "bksl/aF9",
+						"tabName" : "Customer",
+						"icon" : "fa fa-user", 
+						"activeTab" : "Customer", 
+						"activeListTab" : "Customers"
+					}
+			
 				],
 		"objects": [ 
 				 	{
@@ -88,13 +96,22 @@
 						"object" : "user.json",
 						"layout" : "userView.json",
 						"listView" : "userListView.json"	
-					},{
+					},
+			    {
 						"objId" : "a04",
 						"objectName" : "working_hours", 
 						"object" : "workinghour.json",
 						"layout" : "workinghourView.json",
 						"listView" : "workinghourListView.json"	
-					}  
+					},
+			    {
+						"objId" : "aF9",
+						"objectName" : "Customer", 
+						"object" : "customer.json",
+						"layout" : "customerView.json",
+						"listView" : "customerListView.json"	
+					}   
+			
 				]
 		
 	}

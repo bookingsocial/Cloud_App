@@ -3,9 +3,12 @@
 		"sections": [
 						{ 
 							"title": "Overview",
-							"fields": [	 			"Name","PreferredExpert","Working_Hour","DurationTime","Description","Active","DisplayType","DurationUnit"
-							]
+							"fields": [	"Name","PreferredExpert","Description","Active"]
+						},
+						{ 
+							"title": "Working Hours",
+							"fields": [	"Working_Hour","DurationTime","DurationUnit"	]
 						}
-						
 					]
+		
 	}  
