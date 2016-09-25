@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo base_url();?>js/lib/plugins/iCheck/all.css">
 <style>
 .profile 
 {
@@ -96,10 +95,10 @@ span.tags
 					<?php }else{?>
 						<a href="<?php echo base_url('bksl/auth/a_activate/'.$userDet->id); ?>" class="btn btn-primary">Activate</a>
 					<?php }?>
-					<?php echo form_open(base_url('bksl/auth/forget_password'),array('style' => 'display: initial;')); ?>
+					<!--<?php echo form_open(base_url('bksl/auth/reset_password/'.$userDet->id.'/'.$userDet->username),array('style' => 'display: initial;')); ?>
 						<input name="login" id="login" type="hidden" value="<?php echo $userDet->username; ?>"/>
 						<button type="submit" class="btn btn-primary">Reset Password</button>
-					<?php echo form_close(); ?>
+					<?php echo form_close(); ?>-->
 	</div><!-- /.box-header --> 
     <div class="box-body">
 		<div class="container">

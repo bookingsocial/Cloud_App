@@ -174,7 +174,7 @@
 				   },
 				   success: function(data) {
 						 data = $.parseJSON(data);
-						 if(data.hasOwnProperty('errors') && data.errorType ='JSON'){
+						 if(data.hasOwnProperty('errors') && data.errorType =='JSON'){
 						 	if(data.errors != ''){
 						 		$(this).attr('disabled',false);
 							  var errors = '';
@@ -182,7 +182,7 @@
 									errors += '<p>'+data.errors[a]+'</p><br/>';
 								}
 							  $('#errorMessage').html(errors);
-							}if(data.hasOwnProperty('errors') && data.errorType ='HTML'){
+							}if(data.hasOwnProperty('errors') && data.errorType =='HTML'){
 							  $('#errorMessage').html(data.errors);
 							}else{
 								window.location = '/bksl/users';

@@ -1,6 +1,5 @@
 <div class="col-md-12">
 <h4>{{title}}</h4>
-<div class="container">
 {{#fields}}
       {{#type_text}}
           <div class=" col-xs-12 col-md-6">
@@ -90,5 +89,4 @@
           </div> 
       {{/type_boolean}}
   {{/fields}}
-</div>
 </div>
