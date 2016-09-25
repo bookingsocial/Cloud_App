@@ -171,7 +171,7 @@ class Tank_auth
 		$username = $data['username']; 
 		$email = $data['email']; 
 		$password = $data['password'];
-		if ((strlen($username) > 0) AND !$this->ci->users->is_username_available($username)) {
+		if ((strlen($username) > 0) AND !$this->ci->users->is_username_available($username,$data['Organization_Id'])) {
 			$this->error = array('username' => 'auth_username_in_use');
 
 		} elseif (!$this->ci->users->is_email_available($email,$data['Organization_Id'])) {
