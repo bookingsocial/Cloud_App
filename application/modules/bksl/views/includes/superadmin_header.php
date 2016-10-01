@@ -138,20 +138,6 @@
 		   
 			<?php } ?>     
             
-           <!--  <li class="<?php echo $isDashboardActive; ?>">
-              <a href="<?php echo base_url();?>booking/">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
-              </a>
-            </li>
-            <li class="<?php echo $isAppointmentActive; ?>">
-              <a href="#">
-                <i class="fa fa-calendar"></i>
-                <span>Appointments</span>
-                <span class="label label-primary pull-right">4</span>
-              </a>
-            </li> -->
-            
-            
 			</ul>
 			
 			

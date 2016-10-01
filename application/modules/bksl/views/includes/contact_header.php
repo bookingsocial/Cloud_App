@@ -165,30 +165,6 @@
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
           </div>
-          <!-- search form 
-       <form action="<?php echo base_url('bksl/formSearch');?>" method="POST" class="sidebar-form search">
-				<div class="input-group">
-					<input type="text" name="searchVal" class="form-control filterinput" placeholder="Search..." />
-					<span class="input-group-btn">
-					 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-					</span>
-				</div> 
-					</form>-->
-			<?php 
-				$isDashboardActive = '';
-				if($title == 'Dashboard')
-					$isDashboardActive = 'active';
-
-			?>
-			<?php 
-				$isAppointmentActive = '';
-				$isNewAppActive = '';
-				if($title == 'New Appointment'){
-					$isAppointmentActive = 'active';
-					$isNewAppActive = 'active';
-				}
-
-			?>
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">

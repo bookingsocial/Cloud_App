@@ -177,19 +177,6 @@
 					</span>
 				</div>
 			</form>
-		  
-		<?php 
-			$isDashboardActive = '';
-			if($title == 'Dashboard')
-				$isDashboardActive = 'active';
-
-			$isCalendarActive = '';
-			if($title == 'Calendar'){
-				$isCalendarActive = 'active';
-			}
-		?>
-			
-		<?php //echo $jsonTabDataView; exit; ?>
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu"  id="contents">
