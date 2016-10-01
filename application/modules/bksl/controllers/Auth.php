@@ -281,8 +281,8 @@ class Auth extends MX_Controller
 	 */
 	function activate()
 	{
-		$user_id		= $this->uri->segment(3);
-		$new_email_key	= $this->uri->segment(4);
+		$user_id		= $this->uri->segment(4);
+		$new_email_key	= $this->uri->segment(5);
 
 		// Activate user
 		if ($this->tank_auth->activate_user($user_id, $new_email_key)) {		// success
@@ -382,8 +382,8 @@ class Auth extends MX_Controller
 	 */
 	function reset_password()
 	{
-		$user_id		= $this->uri->segment(3);
-		$new_pass_key	= $this->uri->segment(4);
+		$user_id		= $this->uri->segment(4);
+		$new_pass_key	= $this->uri->segment(5);
 
 		$this->form_validation->set_rules('new_password', 'New Password', 'trim|required|xss_clean|min_length['.$this->config->item('password_min_length', 'tank_auth').']|max_length['.$this->config->item('password_max_length', 'tank_auth').']|alpha_dash');
 		$this->form_validation->set_rules('confirm_new_password', 'Confirm new Password', 'trim|required|xss_clean|matches[new_password]');

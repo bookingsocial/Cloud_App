@@ -211,8 +211,8 @@ class Booking extends MX_Controller
 				$numProfDtls = count($jsonProfiledtls['objects']);  
 				$ExpertDetails	= $this->Expert_model->getExpertDetails($related_to,$organizationId);
 				$data['ExpertDetails'] = $ExpertDetails;
-				$searchResult  = [];
-				$dataListView  = [];
+				$searchResult[];
+				$dataListView[];
 				if($searchVal != ''){
 					 
 					foreach($jsonProfileObject as $row) {
@@ -228,7 +228,7 @@ class Booking extends MX_Controller
 						$dataListViewdd  = json_decode($jsonDataListView, true);
 						
 						//$allDetailsById = $this->objForm_model->getRecordsById($organizationId,$jsonProfileObject[0]['objectName']);
-						$relatedObjects = [];
+						$relatedObjects [];
 						//print_r($dataListView['fields']);exit;
 						$objectFields = $dataListView['fields'];
 						for($j=0;$j < count($objectFields); $j++){
@@ -241,7 +241,7 @@ class Booking extends MX_Controller
 						}
 						//print_r($relatedObjects);exit;
 						$relatedListObjects = $this->objForm_model->getRelatedListObjects($organizationId,$relatedObjects);
-						$relatedObjectData = [];
+						$relatedObjectData[];
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
@@ -277,8 +277,8 @@ class Booking extends MX_Controller
 				$numProfDtls = count($jsonProfiledtls['objects']);  
 				$ExpertDetails	= $this->Expert_model->getExpertDetails($related_to,$organizationId);
 				$data['ExpertDetails'] = $ExpertDetails;
-				$searchResult  = [];
-				$dataListView  = [];
+				$searchResult[];
+				$dataListView[];
 
 				if($searchVal != ''){
 										
@@ -293,7 +293,7 @@ class Booking extends MX_Controller
 						$dataListView[$row['objectName']] = json_decode($jsonDataListView, true);
 						$dataListViewdd  = json_decode($jsonDataListView, true);
 						//$allDetailsById = $this->objForm_model->getRecordsById($organizationId,$jsonProfileObject[0]['objectName']);
-						$relatedObjects = [];
+						$relatedObjects[];
 					//	print_r($dataListViewdd['fields']);exit;
 						$objectFields = $dataListViewdd['fields']; 
 						for($j=0;$j < count($dataListViewdd['fields']); $j++){
@@ -306,7 +306,7 @@ class Booking extends MX_Controller
 						}    
 					//	print_r($searchResult);exit;
 						$relatedListObjects = $this->objForm_model->getRelatedListObjects($organizationId,$relatedObjects);
-						$relatedObjectData = [];
+						$relatedObjectData[];
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
@@ -340,8 +340,8 @@ class Booking extends MX_Controller
 				$related_to = $userDetails->related_to;
 				$numProfDtls = count($jsonProfiledtls['objects']);  
 			 
-				$searchResult  = [];
-			  $dataListView  = [];
+				$searchResult[];
+			  $dataListView[];
 				if($searchVal != ''){ 
 					 
 					foreach($jsonProfileObject as $row) {
@@ -356,7 +356,7 @@ class Booking extends MX_Controller
 						$dataListView[$row['objectName']] = json_decode($jsonDataListView, true);
 						$dataListViewdd  = json_decode($jsonDataListView, true);
 						//$allDetailsById = $this->objForm_model->getRecordsById($organizationId,$jsonProfileObject[0]['objectName']);
-						$relatedObjects = [];
+						$relatedObjects[];
 						//print_r($dataListView['fields']);exit;
 						$objectFields = $dataListViewdd['fields'];
 						for($j=0;$j < count($objectFields); $j++){
@@ -369,7 +369,7 @@ class Booking extends MX_Controller
 						}
 						//print_r($relatedObjects);exit;
 						$relatedListObjects = $this->objForm_model->getRelatedListObjects($organizationId,$relatedObjects);
-						$relatedObjectData = [];
+						$relatedObjectData[];
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;

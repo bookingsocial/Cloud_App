@@ -95,7 +95,7 @@ class Expert extends MX_Controller  {
 		$expertSFId = $data['ExpertDetails']->Salesforce_Id;
 		$appointmentDetails= $this->expert_model->getAppoitmentDetails($expertSFId,$organizationId);
 		//print_r(getContactDetailsById($organizationId,'003i000002BeRPHAA3'));exit;
-		$events = [];
+		$events[];
 		foreach ($appointmentDetails as $app){
 			$contactDetails = getContactDetailsById($organizationId,$app->Contact_Id);
 			//echo $app->Contact_Id;

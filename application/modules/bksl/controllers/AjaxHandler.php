@@ -99,7 +99,7 @@ class AjaxHandler extends CI_Controller  {
     	$object = $this->input->get('object', TRUE);
     	$organizationId = $this->input->get('orgId', TRUE);
     	$result = $this->objForm_model->objectSearch($term,$object,$organizationId);
-    	$response = [];
+    	$response[];
     	for ($i = 0; $i < count($result); $i++) {
     		$response[] = array(
     				"id" => ($result[$i]->Salesforce_Id != NULL && $result[$i]->Salesforce_Id != '') ? $result[$i]->Salesforce_Id : $result[$i]->uId,
