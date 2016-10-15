@@ -18,7 +18,7 @@
             </div>
             <div class="col-xs-8 col-md-8">
               <select id='{{fieldname}}' name='{{fieldname}}' class="form-control">
-                  <option  value='' ></option>
+                  <option  value='' >--none--</option>
                 {{#pickval}}
                   <option  value='{{val}}' {{selected}}>{{title}}</option>
                 {{/pickval}}

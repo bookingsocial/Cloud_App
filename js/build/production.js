@@ -227,7 +227,7 @@
                             field.type_text = true;
                             //comp_fields_text_init(config, field);
                         } else if (field.type == 'picklist') {
-                            for (var p = 0; p < field.pickval.length; i++) {
+                            for (var p = 0; p < field.pickval[0].length; i++) {
                                 if (field.pickval[p].val === field.value)
                                     field.pickval[p].selected = field.value ? "selected" : "";
                             }
@@ -237,7 +237,7 @@
                            if (field.visibleType == "boolean") {
                                 field.isBooleanType = true;
                                 if (field.value == 1) {
-                                    field.value = true;
+                                    field.value = true; 
                                 } else {
                                     field.value = false;
                                 }
@@ -284,7 +284,7 @@
                                 data: function(params) {
                                     return {
                                         term: params.term, // search term
-                                        object: field.relatedobject,
+                                        object: fieldType.relatedobject,
                                         orgId: config.orgId,
                                         page: params.page
                                     };
@@ -317,16 +317,6 @@
     }
     window.processor_fields = processor_fields;
 
-    /*function processor_listviewBody(config, fieldVal, fieldLayout){
-    	
-    	for(var pi in fields){
-    		var field = fields[pi]; 
-    			comp_fields_listview_init(config, field);
-    		
-    	}
-    }
-    window.processor_listviewBody = processor_listviewBody;*/
-
     function processor_listviewHeader(config, dataListView) {
 
         for (var pi in dataListView) {
@@ -336,7 +326,6 @@
         }
     }
     window.processor_listviewHeader = processor_listviewHeader;
-
 
 })();
 
