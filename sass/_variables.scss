@@ -1,0 +1,18 @@
+﻿// ------------------------------------------------------------- 
+// Filename:		variables.scsss
+// Description:		This file contains configuration page header styling. This page is not mobile friendly.
+// -------------------------------------------------------------
+
+// Colors
+$brand-primary: darken(#428bca, 6.5%); // #337ab7
+$brand-success: #5cb85c;
+$brand-info:    #5bc0de;
+$brand-warning: #f0ad4e;
+$brand-danger:  #d9534f;
+
+
+// Typography
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base:        $font-family-sans-serif;
