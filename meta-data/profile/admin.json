@@ -55,21 +55,21 @@
 					{
 						"URL" : "bksl/a21",
 						"tabName" : "Account",
-						"icon" : "fa fa-profile",
+						"icon" : "fa fa-user",
 						"activeTab" : "Account",
 						"activeListTab" : "Account"
 					},
 					{
 						"URL" : "bksl/a14",
 						"tabName" : "Lead",
-						"icon" : "fa fa-profile",
+						"icon" : "fa fa-user",
 						"activeTab" : "Lead",
 						"activeListTab" : "Lead"
 					},
 					{
 						"URL" : "bksl/a15",
 						"tabName" : "Opportunity",
-						"icon" : "fa fa-profile",
+						"icon" : "fa fa-user",
 						"activeTab" : "Opportunity",
 						"activeListTab" : "Opportunity"
 					}
@@ -137,7 +137,7 @@
 						"objectName" : "opportunities",
 						"object" : "opportunity.json",
 						"layout" : "opportunityView.json",
-						"listView" : "OpportunityListView.json"
+						"listView" : "opportunityListView.json"
 					}
 
 			

@@ -1,5 +1,5 @@
 {
-                "title": "Account",
+                "title": "Accounts",
                 "fields": [
                         {
                                 "label" : "Name",
@@ -34,8 +34,8 @@
                                 "ApiName" : "state"
                         },
 				         {
-                                "label" : "pincode",
-                                "ApiName" : "pincode"
+                                "label" : "Postal Code",
+                                "ApiName" : "PostalCode"
                         },
                 ]
         }
