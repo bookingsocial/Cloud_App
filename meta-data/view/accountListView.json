@@ -1,0 +1,41 @@
+{
+                "title": "Account",
+                "fields": [
+                        {
+                                "label" : "Name",
+                                "ApiName" : "Name"
+                        },
+                        {
+                                "label" : "company",
+                                "ApiName" : "company"
+                        },
+                        {
+                                "label" : "Email",
+                                "ApiName" : "Email"
+                        },
+                        {
+                                "label" : "Phone",
+                                "ApiName" : "Phone"
+                        },
+				        {
+                                "label" : "Mobile",
+                                "ApiName" : "Mobile"
+                        },
+				         {
+                                "label" : "Street",
+                                "ApiName" : "Street"
+                        },
+				        {
+                                "label" : "city",
+                                "ApiName" : "city"
+                        },
+				         {
+                                "label" : "state",
+                                "ApiName" : "state"
+                        },
+				         {
+                                "label" : "pincode",
+                                "ApiName" : "pincode"
+                        },
+                ]
+        }

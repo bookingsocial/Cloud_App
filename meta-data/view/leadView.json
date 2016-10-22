@@ -1,0 +1,10 @@
+   {
+   	"title": "Lead",
+   	"sections": [{
+   		"title": "Overview",
+   		"fields": [
+   			"FirstName", "LastName", "Company", "Mobile", "Phone", "LeadSource", "Status",
+   			"Street", "City", "State", "Country", "PostalCode"
+   		]
+   	}]
+   }

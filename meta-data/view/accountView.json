@@ -1,0 +1,12 @@
+{
+                "title": "Account",
+                "sections": [
+                                                {
+                                                        "title": "Overview",
+                                                        "fields": [
+                                                        "Name", "company", "Email", "Mobile", "Phone", "Street", "City", "State"
+, "Country", "pincode"
+                                                        ]
+                                                }
+                                        ]
+        }

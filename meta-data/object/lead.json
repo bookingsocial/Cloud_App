@@ -1,106 +1,125 @@
-	{
-		"type": "object",
-		"fields": [
-				   {
-					"fieldname": "Company",
-					"label": "Company",
-					"type": "text"
-				  },
-				  {
-					"fieldname": "uId",
-					"label": "UId",
-					"type": "text"
-				  },
-          {
-					"fieldname": "FirstName",
-					"label": "First Name",
-					"type": "text"
-					
-				  },
-				  {
-					"fieldname": "LastName",
-					"label": "Last Name",
-					"type": "text",
-					"validations": [
-					  {
-						"fieldname": "LastName",
-						"required": true,
-						"failureMessage": "LastName required"
-					  }
-					]
-				  },
-				  {
-					"fieldname": "Mobile",
-					"label": "Mobile",
-					"type": "text"
-				  },
-				  {
-					"fieldname": "Email",
-					"label": "Email",
-					"type": "text"
-					
-				  },
-			      {
-					"fieldname": "Phone",
-					"label": "Phone",
-					"type": "text"
-							
-				  },
-				
-				  {
-					"fieldname": "Street",
-					"label": "Street",
-					"type": "text"
-				  },
-				  
-				  {
-					"fieldname": "City",
-					"label": "City",
-					"type": "text"
-				  },
-				  {
-					"fieldname": "State",
-					"label": "State",
-					"type": "text"
-				  },
-				  {
-					"fieldname": "Country",
-					"label": "Country",
-					"type": "text"
-					
-				  },
-				  {
-					"fieldname": "Zip",
-					"label": "Zip",
-					"type": "text"
-				  },
-				  {
-					"fieldname": "Description",
-					"label": "Description",
-					"type": "text"
-					
-				  },
-					{ 
-					"fieldname": "Employee_Size",
-					"label": "Employee Size",
-					"type": "text"
-					
-				  },
-					{
-					"fieldname": "Source",
-					"label": "Source",
-					"type": "picklist"
-					"pickval":[
-            { 
-              "Web", 
-              "Phone Inquery",
-              "Partner",
-              "Paid Add",
-              "Social Media"
-            
-            }
-            ]
-				  } 
-			
-				]
-	}
+{
+	"type": "object",
+	"fields": [{
+			"fieldname": "Mobile",
+			"label": "Mobile",
+			"type": "text"
+		}, {
+			"fieldname": "Phone",
+			"label": "Phone",
+			"type": "text"
+		}, {
+			"fieldname": "Organization_Id",
+			"label": "Organization Id",
+			"type": "text"
+		}, {
+			"fieldname": "Salesforce_Id",
+			"label": "Salesforce Id",
+			"type": "text"
+		}, {
+			"fieldname": "uId",
+			"label": "UId",
+			"type": "text"
+		},
+
+		{
+			"fieldname": "FirstName",
+			"label": "First Name",
+			"type": "text"
+
+		}, {
+			"fieldname": "Company",
+			"label": "Company",
+			"type": "text"
+
+		}, {
+			"fieldname": "Status",
+			"label": "Lead Status",
+			"type": "picklist",
+			"pickval": [{
+				"val": "Open - Not Contacted",
+				"title": "Open - Not Contacted"
+			}, {
+				"val": "Working - COntacted",
+				"title": "Working - COntacted"
+			}, {
+				"val": "Closed - Converted",
+				"title": "Closed - Converted"
+			}, {
+				"val": "Closed - Not Converted",
+				"title": "Closed - Not Converted"
+			}]
+		}, {
+			"fieldname": "LeadSource",
+			"label": "Lead Source",
+			"type": "picklist",
+			"pickval": [{
+				"val": "Web",
+				"title": "Web"
+			}, {
+				"val": "Phone Inquiry",
+				"title": "Phone Inquiry"
+			}, {
+				"val": "partner Referral",
+				"title": "partner Referral"
+			}, {
+				"val": "Purchased List",
+				"title": "Purchased List"
+			}, {
+				"val": "Other",
+				"title": "Other"
+			}]
+		}, {
+			"fieldname": "NumberofEmployees",
+			"label": "No. of Employees",
+			"type": "text"
+
+		}, {
+			"fieldname": "Street",
+			"label": "Street",
+			"type": "text"
+
+		}, {
+			"fieldname": "City",
+			"label": "City",
+			"type": "text"
+
+		}, {
+			"fieldname": "State",
+			"label": "State",
+			"type": "text"
+
+		}, {
+			"fieldname": "Description",
+			"label": "Description",
+			"type": "textarea"
+
+		}, {
+			"fieldname": "Country",
+			"label": "Country",
+			"type": "text"
+
+		}, {
+			"fieldname": "Postalcode",
+			"label": "Postalcode",
+			"type": "text"
+
+		}, {
+			"fieldname": "Provider",
+			"label": "Provider",
+			"type": "text"
+
+		},
+
+		{
+			"fieldname": "LastName",
+			"label": "Last Name",
+			"type": "text",
+			"validations": [{
+				"fieldname": "LastName",
+				"required": true,
+				"failureMessage": "LastName required"
+			}]
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"title": "Opportunity",
+	"sections": [{
+			"title": "Overview",
+			"fields": [
+				"Account", "OpportunityName", "opportunityOwner", "StageName", "Private",
+				"Probability", "NextStep", "CloseDate", "Primary_Campaign_Source", "Amount"
+			]
+		}
+
+	]
+}

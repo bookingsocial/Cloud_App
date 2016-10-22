@@ -1,0 +1,16 @@
+{
+	"title": "Opportunities",
+	"fields": [{
+			"label": "Name",
+			"ApiName": "Opportunity Name"
+		}, {
+			"label": "Owner",
+			"ApiName": "OpportunityOwner"
+		},
+
+		{
+			"label": "Close Date",
+			"ApiName": "CloseDate"
+		}
+	]
+}

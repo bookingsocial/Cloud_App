@@ -1,0 +1,117 @@
+ {
+ 	"type": "object",
+ 	"fields": [{
+ 			"fieldname": "Account",
+ 			"label": "Account Name",
+ 			"type": "Lookup",
+ 			"labelfield": "Name",
+ 			"relatedobject": "accounts"
+ 		},
+
+ 		{
+ 			"fieldname": "CloseDate",
+ 			"label": "Close Date",
+ 			"type": "Date"
+
+ 		}, {
+ 			"fieldname": "Amount",
+ 			"label": "Amount",
+ 			"type": "Text"
+ 		}, {
+ 			"fieldname": "OpportunityName",
+ 			"label": "Name",
+ 			"type": "text",
+ 			"validations": [{
+ 				"fieldname": "OpportunityName",
+ 				"required": true,
+ 				"failureMessage": "Name required"
+ 			}]
+ 		}, {
+ 			"fieldname": "OpportunityOwner",
+ 			"label": "Owner",
+ 			"type": "Lookup",
+ 			"labelfield": "Name",
+ 			"relatedobject": "User"
+
+ 		}, {
+ 			"fieldname": "StageName",
+ 			"label": "Stage",
+ 			"type": "Picklist",
+ 			"pickval": [{
+ 				"val": "Prospecting",
+ 				"title": "Prospecting"
+ 			}, {
+ 				"val": "Qualification",
+ 				"title": "Qualification"
+ 			}, {
+ 				"val": "Needs Analysis",
+ 				"title": "Needs Analysis"
+ 			}, {
+ 				"val": "Value Proposition",
+ 				"title": "Value Proposition"
+ 			}, {
+ 				"val": "id. Decision Makers",
+ 				"title": "id. Decision Makers"
+ 			}, {
+ 				"val": "Perception Analysis",
+ 				"title": "Perception Analysis"
+
+ 			}, {
+ 				"val": "Proposal/Price Quote",
+ 				"title": "Proposal/Price Quote"
+ 			}, {
+ 				"val": "Negotiation/Review",
+ 				"title": "Negotiation/Review"
+
+ 			}, {
+ 				"val": "Closed Won",
+ 				"title": "Closed Won"
+
+ 			}, {
+ 				"val": "Closed Lost",
+ 				"title": "Closed Lost"
+
+ 			}]
+
+ 		}, {
+ 			"fieldname": "Type",
+ 			"label": "Type",
+ 			"type": "picklist",
+ 			"Pickval": [{
+
+ 				"var": "Existing Customer - Upgrade",
+ 				"title": "Existing Customer - Upgrade"
+ 			}, {
+ 				"var": "Existing Customer - Replacement",
+ 				"title": "Existing Customer - Replacement"
+ 			}, {
+ 				"var": "Existing Customer - Downgrade",
+ 				"title": "Existing Customer - Downgrade"
+ 			}, {
+ 				"var": "New Customer",
+ 				"title": "NewCustomer"
+ 			}]
+ 		},
+
+ 		{
+ 			"fieldname": "Private",
+ 			"label": "Private",
+ 			"type": "Boolean"
+ 		}, {
+ 			"fieldname": "Primary_Campaign_Source",
+ 			"label": "Campaign",
+ 			"type": "text"
+ 		},
+
+ 		{
+ 			"fieldname": "Provider",
+ 			"label": "Provider",
+ 			"type": "text"
+ 		}, {
+ 			"fieldname": "Salesforce_Id",
+ 			"label": "Salesforce Id",
+ 			"type": "text"
+ 		}
+
+ 	]
+ }

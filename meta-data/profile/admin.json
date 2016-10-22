@@ -51,13 +51,27 @@
 						"icon" : "fa fa-user", 
 						"activeTab" : "User", 
 						"activeListTab" : "Users"
-					}, 
-					{    
-						"URL" : "bksl/aF9",
-						"tabName" : "Customer",
-						"icon" : "fa fa-user", 
-						"activeTab" : "Customer", 
-						"activeListTab" : "Customers"
+					},
+					{
+						"URL" : "bksl/a21",
+						"tabName" : "Account",
+						"icon" : "fa fa-profile",
+						"activeTab" : "Account",
+						"activeListTab" : "Account"
+					},
+					{
+						"URL" : "bksl/a14",
+						"tabName" : "Lead",
+						"icon" : "fa fa-profile",
+						"activeTab" : "Lead",
+						"activeListTab" : "Lead"
+					},
+					{
+						"URL" : "bksl/a15",
+						"tabName" : "Opportunity",
+						"icon" : "fa fa-profile",
+						"activeTab" : "Opportunity",
+						"activeListTab" : "Opportunity"
 					}
 			
 				],
@@ -97,20 +111,35 @@
 						"layout" : "userView.json",
 						"listView" : "userListView.json"	
 					},
-			    {
+					{
 						"objId" : "a04",
 						"objectName" : "working_hours", 
 						"object" : "workinghour.json",
 						"layout" : "workinghourView.json",
 						"listView" : "workinghourListView.json"	
 					},
-			    {
-						"objId" : "aF9",
-						"objectName" : "Customer", 
-						"object" : "customer.json",
-						"layout" : "customerView.json",
-						"listView" : "customerListView.json"	
-					}   
+					{
+						"objId" : "a21",
+						"objectName" : "accounts",
+						"object" : "account.json",
+						"layout" : "accountView.json",
+						"listView" : "accountListView.json"
+					},
+					{
+						"objId" : "a14",
+						"objectName" : "leads",
+						"object" : "lead.json",
+						"layout" : "leadView.json",
+						"listView" : "leadListView.json"
+					}, 
+					{
+						"objId" : "a15",
+						"objectName" : "opportunities",
+						"object" : "opportunity.json",
+						"layout" : "opportunityView.json",
+						"listView" : "OpportunityListView.json"
+					}
+
 			
 				]
 		

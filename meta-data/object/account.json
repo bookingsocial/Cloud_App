@@ -1,80 +1,80 @@
-	{
-		"type": "object",
-		"fields": [
-				   {
-					"fieldname": "Company",
-					"label": "Company",
-					"type": "text"
-				  },
-				  {
-					"fieldname": "uId",
-					"label": "UId",
-					"type": "text"
-				  },  
-				  {
-					"fieldname": "Mobile",
-					"label": "Mobile",
-					"type": "text"
-				  },
-				  {
-					"fieldname": "Email",
-					"label": "Email",
-					"type": "text"
-					
-				  },
-			      {
-					"fieldname": "Phone",
-					"label": "Phone",
-					"type": "text"
-							
-				  },
-				
-				  {
-					"fieldname": "Street",
-					"label": "Street",
-					"type": "text"
-				  },
-				  
-				  {
-					"fieldname": "City",
-					"label": "City",
-					"type": "text"
-				  },
-				  {
-					"fieldname": "State",
-					"label": "State",
-					"type": "text"
-				  },
-				  {
-					"fieldname": "Country",
-					"label": "Country",
-					"type": "text"
-					
-				  },
-				  {
-					"fieldname": "Zip",
-					"label": "Zip",
-					"type": "text"
-				  },
-				  {
-					"fieldname": "Description",
-					"label": "Description",
-					"type": "text"
-					
-				  },
-					{ 
-					"fieldname": "Employee_Size",
-					"label": "Employee Size",
-					"type": "text"
-					
-				  },
-          { 
-					"fieldname": "Lead",
-					"label": "Lead",
-					"labelfield": "Name",
-					"type": "lookup",				
-					"relatedobject" : "Lead" 
-				  }  
-							
-				]
-	}
+{
+	"type": "object",
+	"fields": [
+					   {
+							"fieldname": "Mobile",
+							"label": "Mobile",
+							"type": "text"
+					  },
+					   {
+							"fieldname": "Organization_Id",
+							"label": "Organization Id",
+							"type": "text"
+					  },
+					   {
+							"fieldname": "Salesforce_Id",
+							"label": "Salesforce Id",
+							"type": "text"
+					  },
+					   {
+							"fieldname": "uId",
+							"label": "UId",
+							"type": "text"
+					  },
+
+					  {
+							"fieldname": "Name",
+							"label": "Name",
+							"type": "text"
+
+					  },
+					  {
+							"fieldname": "Employee_Size",
+							"label": "Employee_Size",
+							"type": "text"
+
+					  },
+					  {
+							"fieldname": "Street",
+							"label": "Street",
+							"type": "text"
+
+					  },
+					  {
+							"fieldname": "City",
+							"label": "City",
+							"type": "text"
+
+					  },
+					  {
+							"fieldname": "State",
+							"label": "State",
+							"type": "text"
+
+					  },
+					   {
+							"fieldname": "Country",
+							"label": "Country",
+							"type": "text"
+
+					  },
+					   {
+							"fieldname": "pincode",
+							"label": "pincode",
+							"type": "text"
+
+					  },
+					  {
+							"fieldname": "Name",
+							"label": "Name",
+							"type": "text",
+							"validations": [
+							  {
+									"fieldname": "Name",
+									"required": true,
+									"failureMessage": "Name required"
+							  }
+							]
+					  }
+			   ]
+}
