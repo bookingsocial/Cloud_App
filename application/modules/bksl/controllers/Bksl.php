@@ -220,8 +220,8 @@ class Bksl extends CI_Controller {
 				$related_to = $userDetails->related_to;
 				$numProfDtls = count($jsonProfiledtls['objects']);  
 				$data['ContactDetails'] = $this->user_model->getContactDetails($contactId,$organizationId);
-				$searchResult[];
-				$dataListView[];
+				$searchResult= array();
+				$dataListView= array();
 				if($searchVal != ''){
 					 
 					foreach($jsonProfileObject as $row) {
@@ -238,7 +238,7 @@ class Bksl extends CI_Controller {
 						$dataListView[$row['objectName']] = json_decode($jsonDataListView, true);
 						$dataListViewdd  = json_decode($jsonDataListView, true);
 						
-						$relatedObjects [];
+						$relatedObjects= array();
 						//print_r($dataListView['fields']);exit;
 						$objectFields = $dataListView['fields'];
 						for($j=0;$j < count($objectFields); $j++){
@@ -251,7 +251,7 @@ class Bksl extends CI_Controller {
 						}
 						//print_r($relatedObjects);exit;
 						$relatedListObjects = $this->objForm_model->getRelatedListObjects($organizationId,$relatedObjects,$userDetails->provider);
-						$relatedObjectData[];
+						$relatedObjectData= array();
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
@@ -291,8 +291,8 @@ class Bksl extends CI_Controller {
 				$numProfDtls = count($jsonProfiledtls['objects']);  
 				$ExpertDetails	= $this->Expert_model->getExpertDetails($related_to,$organizationId);
 				$data['ExpertDetails'] = $ExpertDetails;
-				$searchResult  [];
-				$dataListView  [];
+				$searchResult= array();
+				$dataListView= array();
 
 				if($searchVal != ''){
 										
@@ -309,7 +309,7 @@ class Bksl extends CI_Controller {
 						$jsonDataListView= file_get_contents(base_url().'meta-data/view/'.$sellistView);
 						$dataListView[$row['objectName']] = json_decode($jsonDataListView, true);
 						$dataListViewdd  = json_decode($jsonDataListView, true);
-						$relatedObjects [];
+						$relatedObjects= array();
 					//	print_r($dataListViewdd['fields']);exit;
 						$objectFields = $dataListViewdd['fields']; 
 						for($j=0;$j < count($dataListViewdd['fields']); $j++){
@@ -322,7 +322,7 @@ class Bksl extends CI_Controller {
 						}    
 					//	print_r($searchResult);exit;
 						$relatedListObjects = $this->objForm_model->getRelatedListObjects($organizationId,$relatedObjects,$userDetails->provider);
-						$relatedObjectData [];
+						$relatedObjectData= array();
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
@@ -361,8 +361,8 @@ class Bksl extends CI_Controller {
 				$related_to = $userDetails->related_to;
 				$numProfDtls = count($jsonProfiledtls['objects']);  
 			 
-				$searchResult  [];
-			  $dataListView  [];
+				$searchResult= array();
+			  $dataListView= array();
 				if($searchVal != ''){ 
 					 
 					foreach($jsonProfileObject as $row) {
@@ -378,7 +378,7 @@ class Bksl extends CI_Controller {
 						$jsonDataListView= file_get_contents(base_url().'meta-data/view/'.$sellistView);
 						$dataListView[$row['objectName']] = json_decode($jsonDataListView, true);
 						$dataListViewdd  = json_decode($jsonDataListView, true);
-						$relatedObjects [];
+						$relatedObjects= array();
 						//print_r($dataListView['fields']);exit;
 						$objectFields = $dataListViewdd['fields'];
 						for($j=0;$j < count($objectFields); $j++){
@@ -391,7 +391,7 @@ class Bksl extends CI_Controller {
 						}
 						//print_r($relatedObjects);exit;
 						$relatedListObjects = $this->objForm_model->getRelatedListObjects($organizationId,$relatedObjects,$userDetails->provider);
-						$relatedObjectData [];
+						$relatedObjectData= array();
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
@@ -446,8 +446,8 @@ class Bksl extends CI_Controller {
 				$related_to = $userDetails->related_to;
 				$numProfDtls = count($jsonProfiledtls['objects']);  
 				$data['ContactDetails'] = $this->user_model->getContactDetails($contactId,$organizationId);
-				$searchResult  [];
-				$dataListView  [];
+				$searchResult= array();
+				$dataListView= array();
 				if($searchVal != ''){
 					 
 					foreach($jsonProfileObject as $row) {
@@ -462,7 +462,7 @@ class Bksl extends CI_Controller {
 						$dataListView[$row['objectName']] = json_decode($jsonDataListView, true);
 						$dataListViewdd  = json_decode($jsonDataListView, true);
 						
-						$relatedObjects [];
+						$relatedObjects= array();
 						//print_r($dataListView['fields']);exit;
 						$objectFields = $dataListView['fields'];
 						for($j=0;$j < count($objectFields); $j++){
@@ -475,7 +475,7 @@ class Bksl extends CI_Controller {
 						}
 						//print_r($relatedObjects);exit;
 						$relatedListObjects = $this->objForm_model->getRelatedListObjects($organizationId,$relatedObjects,$userDetails->provider);
-						$relatedObjectData [];
+						$relatedObjectData= array();
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
@@ -514,8 +514,8 @@ class Bksl extends CI_Controller {
 				$numProfDtls = count($jsonProfiledtls['objects']);  
 				$ExpertDetails	= $this->Expert_model->getExpertDetails($related_to,$organizationId);
 				$data['ExpertDetails'] = $ExpertDetails;
-				$searchResult  [];
-				$dataListView  [];
+				$searchResult= array();
+				$dataListView= array();
 
 				if($searchVal != ''){
 										
@@ -529,7 +529,7 @@ class Bksl extends CI_Controller {
 						$jsonDataListView= file_get_contents(base_url().'meta-data/view/'.$sellistView);
 						$dataListView[$row['objectName']] = json_decode($jsonDataListView, true);
 						$dataListViewdd  = json_decode($jsonDataListView, true);
-						$relatedObjects [];
+						$relatedObjects= array();
 					//	print_r($dataListViewdd['fields']);exit;
 						$objectFields = $dataListViewdd['fields']; 
 						for($j=0;$j < count($dataListViewdd['fields']); $j++){
@@ -542,7 +542,7 @@ class Bksl extends CI_Controller {
 						}    
 					//	print_r($searchResult);exit;
 						$relatedListObjects = $this->objForm_model->getRelatedListObjects($organizationId,$relatedObjects,$userDetails->provider);
-						$relatedObjectData [];
+						$relatedObjectData= array();
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
@@ -581,8 +581,8 @@ class Bksl extends CI_Controller {
 				$related_to = $userDetails->related_to;
 				$numProfDtls = count($jsonProfiledtls['objects']);  
 			 
-				$searchResult  [];
-			  $dataListView  [];
+				$searchResult= array();
+			  $dataListView= array();
 				if($searchVal != ''){ 
 					 
 					foreach($jsonProfileObject as $row) {
@@ -596,7 +596,7 @@ class Bksl extends CI_Controller {
 						$jsonDataListView= file_get_contents(base_url().'meta-data/view/'.$sellistView);
 						$dataListView[$row['objectName']] = json_decode($jsonDataListView, true);
 						$dataListViewdd  = json_decode($jsonDataListView, true);
-						$relatedObjects [];
+						$relatedObjects= array();
 						//print_r($dataListView['fields']);exit;
 						$objectFields = $dataListViewdd['fields'];
 						for($j=0;$j < count($objectFields); $j++){
@@ -609,7 +609,7 @@ class Bksl extends CI_Controller {
 						}
 						//print_r($relatedObjects);exit;
 						$relatedListObjects = $this->objForm_model->getRelatedListObjects($organizationId,$relatedObjects,$userDetails->provider);
-						$relatedObjectData [];
+						$relatedObjectData= array();
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
@@ -766,7 +766,7 @@ class Bksl extends CI_Controller {
 						$data['jsonDataListView'] = $jsonDataListView;
 						
 						$data['allDetailsById'] = $this->objForm_model->getRecordsById($organizationId,$selObjectName,$userDetails->provider);
-						$relatedObjects [];
+						$relatedObjects= array();
 						//print_r($dataListView['fields']);exit;
 						$objectFields = $dataListView['fields'];
 						for($j=0;$j < count($objectFields) ; $j++){
@@ -779,7 +779,7 @@ class Bksl extends CI_Controller {
 						}
 						//print_r($relatedObjects);exit;
 						$relatedListObjects = $this->objForm_model->getRelatedListObjects($organizationId,$relatedObjects,$userDetails->provider);
-						$relatedObjectData [];
+						$relatedObjectData= array();
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
@@ -830,7 +830,7 @@ class Bksl extends CI_Controller {
 						$data['jsonDataListView'] = $jsonDataListView;
 						
 						$allDetailsById = $this->objForm_model->getRecordsById($organizationId,$selObjectName,$userDetails->provider);
-						$relatedObjects [];
+						$relatedObjects= array();
 						//print_r($dataListView['fields']);exit;
 						$objectFields = $dataListView['fields'];
 						for($j=0;$j < count($objectFields) ; $j++){
@@ -843,7 +843,7 @@ class Bksl extends CI_Controller {
 						}
 						//print_r($relatedObjects);exit;
 						$relatedListObjects = $this->objForm_model->getRelatedListObjects($organizationId,$relatedObjects,$userDetails->provider);
-						$relatedObjectData [];
+						$relatedObjectData= array();
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
@@ -893,7 +893,7 @@ class Bksl extends CI_Controller {
 						$dataListView = json_decode($jsonDataListView, true);
 						$data['jsonDataListView'] = $jsonDataListView;
 						$allDetailsById = $this->objForm_model->getRecordsById($organizationId,$selObjectName,$userDetails->provider);
-						$relatedObjects [];
+						$relatedObjects= array();
 						//print_r($dataListView['fields']);exit;
 						$objectFields = $dataListView['fields'];
 						//print_r($objectFields);exit;
@@ -907,7 +907,7 @@ class Bksl extends CI_Controller {
 						}
 						//print_r($relatedObjects);exit;
 						$relatedListObjects = $this->objForm_model->getRelatedListObjects($organizationId,$relatedObjects,$userDetails->provider);
-						$relatedObjectData [];
+						$relatedObjectData= array();
 						foreach ($relatedListObjects as $value) {
 							for($k = 0; $k < count($value); $k++){
 								//print_r($value[$k]);exit;
@@ -1421,7 +1421,7 @@ class Bksl extends CI_Controller {
 						
 						$jsondataFields = file_get_contents(base_url().'meta-data/object/'.$selObject);
 						$dynFeildsData = json_decode($jsondataFields, true);
-						$FeildsDt = $dynFeildsData['fields'];
+						$FeildsDt = $dynFeildsData['fields']; 
 						
 						$jsondataFilter = file_get_contents(base_url().'meta-data/view/'.$selLayout);
 						$dynFilterData = json_decode($jsondataFilter, true);
@@ -1429,11 +1429,12 @@ class Bksl extends CI_Controller {
 						
 						$allDetailsByRecordId = $this->objForm_model->getDetailsByRecordId($Salesforce_Id,$selObjectName);
 						$data['DetailsByRecordId'] = $allDetailsByRecordId;
-						
+						   
+						   
 						$data['jsondataFeild'] =json_encode($FeildsDt);
 						$data['selObjectName'] = $selObjectName;
-						$page = array(); 
-						$page['showHeader'] = TRUE; 
+						$page = array();    
+						$page['showHeader'] = TRUE;  
 						$page['showFooter'] = TRUE;
 						$page['page_name'] = 'objectForm/objectForm';
 						$page['title'] = $dynFilterData['title'];
