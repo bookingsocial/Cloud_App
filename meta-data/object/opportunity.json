@@ -11,7 +11,7 @@
  		{
  			"fieldname": "CloseDate",
  			"label": "Close Date",
- 			"type": "datetime"
+ 			"type": "DateTime"
 
  		}, {
  			"fieldname": "Amount",

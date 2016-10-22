@@ -3,8 +3,7 @@
 	"sections": [{
 			"title": "Overview",
 			"fields": [
-				"AccountId", "OpportunityName", "opportunityOwner", "StageName", "Private",
-				"Probability", "NextStep", "CloseDate", "Primary_Campaign_Source", "Amount"
+				"AccountId", "OpportunityName","Stage", "Private", "Type", "CloseDate", "Primary_Campaign_Source", "Amount"
 			]
 		}
 
