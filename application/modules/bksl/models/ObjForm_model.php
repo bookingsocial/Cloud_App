@@ -64,7 +64,7 @@ class objForm_model extends CI_Model {
 		return $query->result();
 	}
 	function getRelatedListObjects($organizationId,$relatedObjects,$provider){
-		//$result= array();
+		$result= array();
 		foreach ($relatedObjects as $key => $value){
 			$selectedFields ='Id,Salesforce_Id,uId,Name';
 			$this->db->select($selectedFields);

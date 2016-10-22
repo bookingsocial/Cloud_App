@@ -99,7 +99,7 @@ class AjaxHandler extends CI_Controller  {
     	$object = $this->input->get('object', TRUE);
     	$organizationId = $this->input->get('orgId', TRUE);
     	$result = $this->objForm_model->objectSearch($term,$object,$organizationId);
-    	//$response = array();
+    	$response = array();
     	for ($i = 0; $i < count($result); $i++) {
     		$response[] = array(
     				"id" => ($result[$i]->Salesforce_Id != NULL && $result[$i]->Salesforce_Id != '') ? $result[$i]->Salesforce_Id : $result[$i]->uId,
@@ -188,7 +188,7 @@ class AjaxHandler extends CI_Controller  {
 		$data['ExpertDetails'] = $this->expert_model->getExpertDetails($related_to,$organizationId);
 		$expertSFId = $data['ExpertDetails']->Salesforce_Id;
 		$appointmentDetails= $this->expert_model->getAppoitmentDetails($expertSFId,$organizationId);
-		//$events[];
+		$events = array();
 		foreach ($appointmentDetails as $app){
 			$contactDetails = getContactDetailsById($organizationId,$app->Contact_Id);
 			//echo $app->Contact_Id;exit;
