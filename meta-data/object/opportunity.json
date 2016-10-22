@@ -1,7 +1,7 @@
  {
  	"type": "object",
  	"fields": [{
- 			"fieldname": "Account",
+ 			"fieldname": "AccountId",
  			"label": "Account Name",
  			"type": "Lookup",
  			"labelfield": "Name",
@@ -34,7 +34,7 @@
  			"relatedobject": "User"
 
  		}, {
- 			"fieldname": "StageName",
+ 			"fieldname": "Stage",
  			"label": "Stage",
  			"type": "Picklist",
  			"pickval": [{

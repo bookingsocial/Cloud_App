@@ -85,12 +85,13 @@
 					"label": "MailingPostalCode",
 					"type": "text"
 					
-				  },  
-					{
-					"fieldname": "Employee_Size",
-					"label": "Employee Size",
-					"type": "text"
-					
+				  },
+				  {
+					"fieldname": "AccountId",
+					"label": "Account Name",
+					"type": "Lookup",
+					"labelfield": "Name",
+					"relatedobject": "accounts"
 				  }
 				]
 	}
