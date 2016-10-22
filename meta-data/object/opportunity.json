@@ -3,7 +3,7 @@
  	"fields": [{
  			"fieldname": "AccountId",
  			"label": "Account Name",
- 			"type": "Lookup",
+ 			"type": "lookup",
  			"labelfield": "Name",
  			"relatedobject": "accounts"
  		},
@@ -11,12 +11,12 @@
  		{
  			"fieldname": "CloseDate",
  			"label": "Close Date",
- 			"type": "Date"
+ 			"type": "datetime"
 
  		}, {
  			"fieldname": "Amount",
  			"label": "Amount",
- 			"type": "Text"
+ 			"type": "text"
  		}, {
  			"fieldname": "OpportunityName",
  			"label": "Name",
@@ -29,14 +29,14 @@
  		}, {
  			"fieldname": "OpportunityOwner",
  			"label": "Owner",
- 			"type": "Lookup",
+ 			"type": "lookup",
  			"labelfield": "Name",
- 			"relatedobject": "User"
+ 			"relatedobject": "users"
 
  		}, {
  			"fieldname": "Stage",
  			"label": "Stage",
- 			"type": "Picklist",
+ 			"type": "picklist",
  			"pickval": [{
  				"val": "Prospecting",
  				"title": "Prospecting"
@@ -96,7 +96,7 @@
  		{
  			"fieldname": "Private",
  			"label": "Private",
- 			"type": "Boolean"
+ 			"type": "boolean"
  		}, {
  			"fieldname": "Primary_Campaign_Source",
  			"label": "Campaign",
