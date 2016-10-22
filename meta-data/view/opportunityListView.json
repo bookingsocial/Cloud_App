@@ -4,8 +4,8 @@
 			"label": "Name",
 			"ApiName": "Opportunity Name"
 		}, {
-			"label": "Owner",
-			"ApiName": "OpportunityOwner"
+			"label": "Type",
+			"ApiName": "Type"
 		},
 
 		{
