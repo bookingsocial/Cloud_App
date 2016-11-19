@@ -1237,7 +1237,7 @@ class Bksl extends CI_Controller {
 					}
 				}
 			}else if($userDetails->user_type =='SUPERADMIN'){ 
-				
+				  
 				$jsonProfiledata = file_get_contents(base_url().'meta-data/profile/admin.json');
 				$jsonProfiledtls = json_decode($jsonProfiledata, true);
 				$jsonProfileObject = $jsonProfiledtls['objects'];
@@ -1266,6 +1266,69 @@ class Bksl extends CI_Controller {
 						$jsondataFilter = file_get_contents(base_url().'meta-data/view/'.$selLayout);
 						$dynFilterData = json_decode($jsondataFilter, true);
 						$data['jsondataFilters'] = $jsondataFilter;
+	/*************/
+						
+						$data['ExpertDetails'] = $this->admin_model->getAllExpertDetails($organizationId);
+						//$ExpertSfId = $ExpertDetails->Salesforce_Id;
+						
+						$dynRelObjFilterData = $dynFilterData['relatedObject'];
+						//print_r($dynRelObjFilterData); exit;
+						$numberOfRelList = count($dynRelObjFilterData['relatedObject']);
+						 
+						for ( $i= 0; $i<=$numberOfRelList; $i++) {
+						
+						
+							
+						$relObjectName = $dynRelObjFilterData[$i]['objectName'];
+						$relObject = $dynRelObjFilterData[$i]['object'];
+						$relListView = $dynRelObjFilterData[$i]['listView']; 
+						$relatedFieldName = $dynRelObjFilterData[$i]['relatedFieldName']; 
+					
+						$jsonDataListView= file_get_contents(base_url().'meta-data/view/'.$relListView);
+						$dataListView = json_decode($jsonDataListView, true);
+						
+					//	print_r($dataListView); exit;  
+						
+						$data['jsonDataRelListView'] = $jsonDataListView;
+						 
+						$allDetailsById = $this->objForm_model->getRelatedObjRecsById($uId,$relatedFieldName,$organizationId,$relObjectName,$userDetails->provider);
+						
+						//print_r($allDetailsById); exit;  
+						$relatedObjects= array();
+						//print_r($dataListView['fields']);exit;
+						$objectFields = $dataListView['fields'];
+						//print_r($objectFields);exit;
+						for($j=0;$j < count($objectFields) ; $j++){
+							//print_r($objectFields[$j]);exit;
+							if (array_key_exists('type', $objectFields[$j])) {
+								if($objectFields[$j]['type'] === 'lookup'){
+									$relatedObjects[$objectFields[$j]['relatedobject']] = $objectFields[$j];
+								}
+							}
+						}
+						//print_r($relatedObjects);exit;
+						$relatedListObjects = $this->objForm_model->getRelatedListObjects($organizationId,$relatedObjects,$userDetails->provider);
+						$relatedObjectData= array();
+						foreach ($relatedListObjects as $value) {
+							for($k = 0; $k < count($value); $k++){
+								//print_r($value[$k]);exit;
+								if($value[$k]->Salesforce_Id != '' && $value[$k]->Salesforce_Id != NULL)
+									$relatedObjectData[$value[$k]->Salesforce_Id] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
+								else
+									$relatedObjectData[$value[$k]->uId] = array("value" => $value[$k]->Name,"urlId"=>$value[$k]->uId);
+							}
+						}
+						  
+						$data ['relatedObjectData'] = json_encode($relatedObjectData);
+						 
+						$data['allDetailsById'] = json_encode($allDetailsById);  
+						  
+						$data['relatedObjtitle'] = $dynRelObjFilterData[$i]['relatedObjTitle'];  
+					//	print_r(json_encode($relatedObjectData)); exit; 
+						 
+						}
+						
+						/*************/
 											
 						$allDetailsByRecordId = $this->objForm_model->getDetailsByRecordId($uId,$selObjectName);
 						$data['DetailsByRecordId'] = $allDetailsByRecordId;
