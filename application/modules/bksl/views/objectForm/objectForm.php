@@ -2,18 +2,20 @@
 		#root .col-xs-12.col-md-6 {
 			    padding: 8px 0px;
 		}
-      	     th {
+		
+		th {
 			width: 80px;
 		}
-	</style>
-    <script>
+	
+	</style> 
+    <script>   
 		_baseURL = '<?php echo  base_url(); ?>';
 
 		var allScripts = [ 	"js/lib/jquery-2.1.4.js", 
-							"js/lib/mustache.js",
+							"js/lib/mustache.js",   
 							"js/lib/LiveValidation.js",
 							"js/lib/jquery.dataTables.js",
-							"js/lib/dataTables.bootstrap.js"
+							"js/lib/dataTables.bootstrap.js"				
 						];  
 		var allCss = [  
 						"css/LiveInValid.css",
@@ -68,42 +70,49 @@
 		</div>
 	</div>
 	  
-	</form>
+	</form>  
 <script> 
 	$(document).ready(function(){ 
 		var config = { 
 		  "root": "root", 
 		  "object" : '<?php echo $selObjectName;?>',
 		  "orgId" : '<?php echo $userDetails->Organization_Id; ?>'
-		};  
-
-		
-		var fields = <?php echo	$jsondataFeild; ?>;
+			};  
+ 		   
+		var fields = <?php echo $jsondataFeild; ?>; 
 		var Filters = <?php echo $jsondataFilters; ?>;
-
-		//console.log(Filters['sections']); 
-		//console.log(fields); 
+						
 		processor_fields(config, fields ,Filters['sections']);
 			 
-	});     
+	}); 
 	  
 	function submitBtn(){
 		processor_validation_execute();
 	}
-	function doconfirm()
+	function doconfirm() 
 	{
 	    job=confirm("Are you sure to delete permanently?");
 	    if(job!=true)
 	    {
 	        return false;
 	    }
-	} 
+	}
+	
+	  
+	
+	
 </script>
+
+
+
+
+
+
 <!--Related List Sections Start-->
+<?php if(isset($relatedObjtitle)){ ?>
+<div class="relatedListView">
+	
 
-
-
-  
   
 	<?php 
 			$idval = $this->uri->segment(2); 
@@ -223,6 +232,13 @@
 	        return false;
 	    }
 	}
+	
+	
+	 
 </script>
 
 <!--Related List Sections End-->
+		
+	
+</div>
+<?php } ?>
