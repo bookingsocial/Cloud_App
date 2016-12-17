@@ -46,6 +46,7 @@ class Bksl extends CI_Controller {
 				$jsonProfiledtls = json_decode($jsonProfiledata, true);
 				$jsonProfileTabs = $jsonProfiledtls['tabs'];
 				$data['profileTabs'] = $jsonProfileTabs;
+
 				 
 				$page = array();
 				$page['showHeader'] = TRUE;
@@ -111,6 +112,10 @@ class Bksl extends CI_Controller {
 			$data['userDetails'] = $userDetails;
 			
 			if($userDetails->user_type =='CONTACT'){
+					$jsonProfiledata = file_get_contents(base_url().'meta-data/profile/contact.json');
+					$jsonProfiledtls = json_decode($jsonProfiledata, true);
+					$jsonProfileTabs = $jsonProfiledtls['tabs'];
+					$data['profileTabs'] = $jsonProfileTabs;
 					$contactId = $userDetails->related_to;
 					$UserName = $this->input->post('FirstName');
 					if($UserName != ''){
