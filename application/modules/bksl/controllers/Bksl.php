@@ -50,7 +50,7 @@ class Bksl extends CI_Controller {
 				$page = array();
 				$page['showHeader'] = TRUE;
 				$page['showFooter'] = TRUE;
-				$page['page_name'] = 'Contact/Profile';
+				$page['page_name'] = 'contact/profile';
 				$page['title'] = 'Profile';
 				$page['data'] = $data;
 				//print_r($data);exit;
@@ -76,7 +76,7 @@ class Bksl extends CI_Controller {
 				$page = array();
 				$page['showHeader'] = TRUE;
 				$page['showFooter'] = TRUE;
-				$page['page_name'] = 'expert/Profile';     
+				$page['page_name'] = 'expert/profile';     
 				$page['title'] = 'Profile';
 				$page['data'] = $data;
 				//print_r($data);exit;

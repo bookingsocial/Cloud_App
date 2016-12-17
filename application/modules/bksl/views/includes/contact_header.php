@@ -27,44 +27,9 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-	<script>
 	
-	(function ($) {
-	  jQuery.expr[':'].Contains = function(a,i,m){
-		  return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
-	  };
-
-	  //live search function
-	  function live_search(list) {
-		$(".filterinput")
-		  .change( function () {
-			//getting search value
-			var searchtext = $(this).val();
-			if(searchtext) {
-			  //finding If content matches with searck keyword
-			  $matches = $(list).find('a:Contains(' + searchtext + ')').parent();
-			  //hiding non matching lists
-			  $('li', list).not($matches).slideUp();
-			  //showing matching lists
-			  $matches.slideDown();
-
-			} else {
-			  //if search keyword is empty then display all the lists
-			  $(list).find("li").slideDown(200);
-			}
-			return false;
-		  })
-		.keyup( function () {
-			$(this).change();
-		});
-	  }
-
-	  $(function () {
-		live_search($("#contents"));
-	  });
-	}(jQuery));
 	
-  </script>
+	
   <body class="skin-blue sidebar-mini">
     <!-- Site wrapper -->
     <div class="wrapper">
@@ -91,17 +56,17 @@
               
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
-               	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <?php if($userDetails->profile == ''){ ?>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				<?php if($userDetails->profile == ''){ ?>
                     	<img src="<?php echo base_url();?>img/user2-160x160.jpg" class="user-image" alt="User Image" />
-										<?php }else{ ?>
+				<?php }else{ ?>
                     	<img src="<?php echo base_url();?>upload/profile/thumb_<?php echo $userDetails->profile;?>" class="user-image" alt="User Image" />
-										<?php } ?>
-                  <span class="hidden-xs"><?php echo $ContactDetails->FirstName.' '.$ContactDetails->LastName; ?> </span>
+				<?php } ?>
+                  <span class="hidden-xs"><?php echo $ContactDetails->LastName.' '.$ContactDetails->FirstName; ?> </span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
-                  <li class="user-header">
+                 <li class="user-header">
                     <?php if($userDetails->profile == ''){ ?>
                     	<img src="<?php echo base_url();?>img/user2-160x160.jpg" class="img-circle" alt="User Image" />
 										<?php }else{ ?>
@@ -111,7 +76,7 @@
                       <?php echo $ContactDetails->FirstName.' '.$ContactDetails->LastName; ?>
                       <small>Member since Nov. 2012</small>
                     </p>
-									</li>
+                  </li>
                   <!-- Menu Body 
                   <li class="user-body">
                     <div class="col-xs-4 text-center">
@@ -152,36 +117,49 @@
         <section class="sidebar">
           <!-- Sidebar user panel -->
           <div class="user-panel">
-            <div class="pull-left image"> 
+             <div class="pull-left image"> 
              <!-- <img src="<?php echo base_url();?>img/user2-160x160.jpg" class="img-circle" alt="User Image" />-->
 							 <?php if($userDetails->profile == ''){ ?>
 								<img src="<?php echo base_url();?>img/user2-160x160.jpg" class="img-circle" alt="User Image" />
 							<?php }else{ ?>
 								<img src="<?php echo base_url();?>upload/profile/thumb_<?php echo $userDetails->profile;?>" class="img-circle" alt="User Image" />
 							<?php } ?>
-						</div>
+            </div>
             <div class="pull-left info">
-              <p><?php echo $ContactDetails->LastName; ?> </p>
+              <p><?php echo $ContactDetails->LastName.' '.$ContactDetails->FirstName; ?> </p>
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
           </div>
+          <!-- search form 
+         <form action="<?php echo base_url('bksl/formSearch');?>" method="POST" class="sidebar-form search">
+						<div class="input-group">
+							<input type="text" name="searchVal" class="form-control filterinput" placeholder="Search..." />
+							<span class="input-group-btn">
+							 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+							</span>
+						</div> 
+					</form>-->
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-            <li class="header">MAIN NAVIGATION</li>
-          <li class="<?php echo $isDashboardActive; ?>">
-              <a href="<?php echo base_url();?>booking/">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
-              </a>
-            </li>
-		  <li class="<?php echo $isNewAppActive; ?>">
-              <a href="<?php echo base_url(); ?>booking/newAppointment/">
-                <i class="fa fa-plus"></i></i> <span>New Appointment</span></i>
-              </a>
-            </li>
+            <li class="header">MAIN NAVIGATION</li> 
+           
+            <?php $sizeOfTab = count($profileTabs); 
+				for($i=0; $i<$sizeOfTab; $i++){  ?>
+			  		 <li class="<?php $isActive = '';
+							if ($title == $profileTabs[$i]['activeTab']) { 
+								echo $isActive = 'active';	} ?>">
+								
+					  <a href="<?php echo base_url();echo $profileTabs[$i]['URL']?>">
+						<i class="<?php echo $profileTabs[$i]['icon'] ?>"></i> <span><?php echo $profileTabs[$i]['tabName'] ?></span></i>
+					  </a>
+					</li>
+		  
+			<?php } ?>
+            
 			</ul>
         </section>
-        <!-- /.sidebar -->
+        <!-- /.sidebar --> 
       </aside>
 
       <!-- =============================================== -->
