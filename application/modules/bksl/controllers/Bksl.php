@@ -1270,7 +1270,8 @@ class Bksl extends CI_Controller {
 						
 						$data['ExpertDetails'] = $this->admin_model->getAllExpertDetails($organizationId);
 						//$ExpertSfId = $ExpertDetails->Salesforce_Id;
-						if(property_exists ($dynFilterData, 'relatedObject')){
+						if(array_key_exists($dynFilterData,'relatedObject')){
+								
 							$dynRelObjFilterData = $dynFilterData['relatedObject'];
 							//print_r($dynRelObjFilterData); exit;
 							$numberOfRelList = count($dynRelObjFilterData['relatedObject']);
@@ -1320,14 +1321,23 @@ class Bksl extends CI_Controller {
 							}
 							  
 							$data ['relatedObjectData'] = json_encode($relatedObjectData);
-							 
-							$data['allDetailsById'] = json_encode($allDetailsById);  
-							  
-							$data['relatedObjtitle'] = $dynRelObjFilterData[$i]['relatedObjTitle'];  
-						//	print_r(json_encode($relatedObjectData)); exit; 
-							 
 							}
+							$data['allDetailsById'] = json_encode($allDetailsById);  
+							if(array_key_exists($dynRelObjFilterData[$i],'relatedObjTitle'))
+								$data['relatedObjtitle'] = $dynRelObjFilterData[$i]['relatedObjTitle'];  
+							//print_r(json_encode($relatedObjectData)); exit; 
 						}
+						
+					/*}else{
+						
+						$data['relatedObjectData'] = 'none';
+						 
+						$data['allDetailsById'] = 'none';
+						   
+						$data['relatedObjtitle'] = 'none';
+					
+					  $data['jsonDataRelListView'] = 'none'; 
+					}*/
 						/*************/
 											
 						$allDetailsByRecordId = $this->objForm_model->getDetailsByRecordId($uId,$selObjectName);
