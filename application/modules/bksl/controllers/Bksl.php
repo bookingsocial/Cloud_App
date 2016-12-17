@@ -1270,7 +1270,7 @@ class Bksl extends CI_Controller {
 						
 						$data['ExpertDetails'] = $this->admin_model->getAllExpertDetails($organizationId);
 						//$ExpertSfId = $ExpertDetails->Salesforce_Id;
-						if(array_key_exists($dynFilterData,'relatedObject')){
+						if(array_key_exists('relatedObject',$dynFilterData)){
 								
 							$dynRelObjFilterData = $dynFilterData['relatedObject'];
 							//print_r($dynRelObjFilterData); exit;
@@ -1323,7 +1323,7 @@ class Bksl extends CI_Controller {
 							$data ['relatedObjectData'] = json_encode($relatedObjectData);
 							}
 							$data['allDetailsById'] = json_encode($allDetailsById);  
-							if(array_key_exists($dynRelObjFilterData[$i],'relatedObjTitle'))
+							if(array_key_exists('relatedObjTitle',$dynRelObjFilterData[$i]))
 								$data['relatedObjtitle'] = $dynRelObjFilterData[$i]['relatedObjTitle'];  
 							//print_r(json_encode($relatedObjectData)); exit; 
 						}
