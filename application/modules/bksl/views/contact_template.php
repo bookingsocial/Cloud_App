@@ -3,7 +3,7 @@
 	$user['title'] = $title;
 	$user['ContactDetails'] = $data['ContactDetails'];
 	$user['userDetails'] = $data['userDetails'];
-	$user['profileTabs'] = $data['profileTabs'];  
+	$user['profileTabs'] = $data['profileTabs'];   
 	//$user['ContactDetalsById'] = $data['ContactDetalsById'];
 	//print_r($data);exit; 
    if($showHeader)
