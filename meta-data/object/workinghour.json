@@ -60,9 +60,14 @@
 				  },
 				  {
 					"fieldname": "Saturday_End_Time",
-					"label": "Saturday Start Time",
+					"label": "Saturday End Time",
 					"type": "text"   
 				  },
+			          {
+					"fieldname": "Saturday_Start_Time",
+					"label": "Saturday Start Time",
+					"type": "text"   
+				  }
 				  {
 					"fieldname": "Sunday_Break_End_Time",
 					"label": "Sunday Break End Time",
