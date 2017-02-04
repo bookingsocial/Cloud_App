@@ -108,16 +108,17 @@
 			$.get(_baseURL + '/layout/fields/lookup.mst', function(template) {
 			var rendered_lookup = Mustache.render(template,field);
 			$('#' + config.root).append(rendered_lookup);
-	  
+	  		$("#"+field.fieldname).attr('object',field.relatedobject)
 			$("#"+field.fieldname).select2({
 				  ajax: {
 				    url: _baseURL+"bksl/ajaxHandler/objectSearch",
 				    dataType: 'json',
 				    delay: 250,
+				    selectedObject:field.relatedobject,
 				    data: function (params) {
 				      return {
 				    	term: params.term, // search term
-				    	object: field.relatedobject,
+				    	object: this.selectedObject,
 				    	orgId : config.orgId,
 				    	page: params.page
 				      };
