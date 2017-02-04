@@ -279,6 +279,7 @@
                     var fieldType = fieldsToRender[k];
 			
                     if (fieldType.type_lookup) {
+			 var relatedObject = fieldType.relatedObject;
                         $("#" + fieldType.fieldname).select2({
                             ajax: {
                                 url: _baseURL + "bksl/ajaxHandler/objectSearch",
@@ -287,7 +288,7 @@
                                 data: function(params) {
                                     return {
                                         term: params.term, // search term
-				    	object: fieldType.relatedObject,
+				    	object: relatedObject,
                                         orgId: config.orgId,
                                         page: params.page
                                     };
