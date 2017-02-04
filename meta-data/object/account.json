@@ -59,8 +59,8 @@
 
 					  },
 					   {
-							"fieldname": "pincode",
-							"label": "pincode",
+							"fieldname": "PostalCode",
+							"label": "PostalCode",
 							"type": "text"
 
 					  },
