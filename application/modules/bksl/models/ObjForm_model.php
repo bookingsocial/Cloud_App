@@ -54,7 +54,7 @@ class objForm_model extends CI_Model {
 		$this->db->select('Id,Salesforce_Id,Name,uId');
 		$this->db->from($object);
 		$this->db->where('Organization_Id', $organizationId); 
-		$this->db->like('Name', $term);
+		$this->db->like('Name', $this->db->escape($term));
 		$query = $this->db->get();
 		return $query->result();
 	}
