@@ -50,7 +50,7 @@ class objForm_model extends CI_Model {
 	}
 	function objectSearch($term,$object,$organizationId)
 	{
-		$query = $this->db->query("SELECT Id,Salesforce_Id,Name,uId FROM ".$object." WHERE Organization_Id ='".$organizationId."' AND Name LIKE '%" .$this->db->escape_like_str($term)."%' ESCAPE '!'");
+		$query = $this->db->query("SELECT Id,Salesforce_Id,Name,uId FROM ".$object." WHERE Organization_Id ='".$organizationId."' AND Name LIKE '%" .$this->db->escape_like_str($term)."%'");
 		//$this->db->select('Id,Salesforce_Id,Name,uId');
 		//$this->db->from($object);
 		//$this->db->where('Organization_Id', $organizationId); 
