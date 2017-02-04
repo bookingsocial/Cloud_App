@@ -279,16 +279,18 @@
                 $('#' + config.root).append(rendered);
                 for (var k = 0; k < fieldsToRender.length; k++) {
                     var fieldType = fieldsToRender[k];
+			
                     if (fieldType.type_lookup) {
                         $("#" + fieldType.fieldname).select2({
                             ajax: {
                                 url: _baseURL + "bksl/ajaxHandler/objectSearch",
                                 dataType: 'json',
                                 delay: 250,
+				selectedObject:field.relatedobject,
                                 data: function(params) {
                                     return {
                                         term: params.term, // search term
-                                        object: field.relatedobject,
+				    	object: this.selectedObject,
                                         orgId: config.orgId,
                                         page: params.page
                                     };
