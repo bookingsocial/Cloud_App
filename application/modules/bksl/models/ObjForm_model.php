@@ -50,12 +50,12 @@ class objForm_model extends CI_Model {
 	}
 	function objectSearch($term,$object,$organizationId)
 	{
-		//$query = $this->db->query("SELECT Id,Salesforce_Id,Name,uId FROM ".$object." WHERE Id LIKE `%".$term."%` OR Salesforce_Id LIKE `%".$term."%` OR Name LIKE `%".$term."%` AND Organization_Id =`".$organizationId."`");
-		$this->db->select('Id,Salesforce_Id,Name,uId');
-		$this->db->from($object);
-		$this->db->where('Organization_Id', $organizationId); 
-		$this->db->like('Name', $this->db->escape_like_str($term));
-		$query = $this->db->get();
+		$query = $this->db->query("SELECT Id,Salesforce_Id,Name,uId FROM ".$object." WHERE Organization_Id ='".$organizationId."' AND Name LIKE '%" .$this->db->escape_like_str($search)."%' ESCAPE '!'");
+		//$this->db->select('Id,Salesforce_Id,Name,uId');
+		//$this->db->from($object);
+		//$this->db->where('Organization_Id', $organizationId); 
+		//$this->db->like('Name', $this->db->escape_like_str($term));
+		//$query = $this->db->get();
 		return $query->result();
 	}
 	function getRecordsById($organizationId,$selObjectName,$provider){
