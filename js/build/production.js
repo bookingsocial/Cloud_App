@@ -287,7 +287,7 @@
                                 data: function(params) {
                                     return {
                                         term: params.term, // search term
-				    	object: fieldType.selectedObject,
+				    	object: fieldType.relatedObject,
                                         orgId: config.orgId,
                                         page: params.page
                                     };
