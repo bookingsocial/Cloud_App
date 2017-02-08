@@ -17,13 +17,13 @@
 				 {
 					"fieldname": "Start_Date",
 					"label": "Start Date",
-					"type": "Date"				
+					"type": "DateTime"				
 					 
 				  },
 			    {
 					"fieldname": "End_Date",
 					"label": "End Date",
-					"type": "Date"
+					"type": "DateTime"
 				  },
 				 {
 					"fieldname": "Service_Id",
