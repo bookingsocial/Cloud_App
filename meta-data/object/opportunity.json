@@ -102,7 +102,11 @@
  			"label": "Campaign",
  			"type": "text"
  		},
-
+    {
+					"fieldname": "uId",
+					"label": "UId",
+					"type": "text"
+				  }, 
  		{
  			"fieldname": "Provider",
  			"label": "Provider",
