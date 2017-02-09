@@ -104,7 +104,7 @@
  		},
                  {
 			"fieldname": "uId",
-			"label": "UId",
+			"label": "uId",
 			"type": "text"
 		  }, 
 		    {
