@@ -216,6 +216,7 @@
             for (var lay in layout) {
                 var layer = layout[lay];
                 var fieldsToRender = [];
+                var picklistFieldsToRender = [];
                 for (var i = 0, l = layer.fields.length; i < l; i++) {
                     //for(var layfield in layer.fields){
                     //	for(var pi in fields){
@@ -227,11 +228,12 @@
                             field.type_text = true;
                             //comp_fields_text_init(config, field);
                         } else if (field.type == 'picklist') {
-                            for (var p = 0; p < field.pickval.length; i++) {
+                            /*for (var p = 0; p < field.pickval.length; i++) {
                                 if (field.pickval[p].val === field.value)
                                     field.pickval[p].selected = field.value ? "selected" : "";
-                            }
+                            }*/
                             field.type_picklist = true;
+                            picklistFieldsToRender.push(field);
                             //comp_fields_picklist_init(config, field);
                         } else if (field.type == 'textView') {
                            if (field.visibleType == "boolean") {
@@ -271,7 +273,10 @@
                     'fields': fieldsToRender,
                     'title': layer.title
                 });
-
+				for(var pl=0;pl < picklistFieldsToRender.length;pl++){
+					var pickList = picklistFieldsToRender[pl];
+					$('#'+pickList.fieldname).val(pickList.value);
+				}
                 $('#' + config.root).append(rendered);
                 $(".DateTime").each(function () {
                 	var $element = $(this);
