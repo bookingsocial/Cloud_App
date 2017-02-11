@@ -3,7 +3,7 @@
    	"sections": [{
    		"title": "Overview",
    		"fields": [
-   			"FirstName", "LastName", "Company", "Mobile", "Phone", "LeadSource","NumberofEmployees", "Status",
+   			"FirstName", "LastName", "Company", "Mobile", "Phone", "LeadSource","NumberOfEmployees", "Status",
    			"Street", "City", "State", "Country", "Pincode"
    		]
    	}]
