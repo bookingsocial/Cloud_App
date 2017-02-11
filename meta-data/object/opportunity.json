@@ -27,13 +27,6 @@
  				"failureMessage": "Name required"
  			}]
  		}, {
- 			"fieldname": "OpportunityOwner",
- 			"label": "Owner",
- 			"type": "lookup",
- 			"labelfield": "Name",
- 			"relatedobject": "users"
-
- 		}, {
  			"fieldname": "Stage",
  			"label": "Stage",
  			"type": "picklist",
