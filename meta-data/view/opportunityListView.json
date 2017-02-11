@@ -2,10 +2,10 @@
 	"title": "Opportunities",
 	"fields": [{
 			"label": "Name",
-			"ApiName": "Opportunity Name"
+			"ApiName": "OpportunityName"
 		}, {
 			"label": "Type",
-			"ApiName": "Type"
+			"ApiName": "OpportunityType"
 		},
 
 		{

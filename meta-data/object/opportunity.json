@@ -67,7 +67,7 @@
  			}]
 
  		}, {
- 			"fieldname": "Type",
+ 			"fieldname": "OpportunityType",
  			"label": "Type",
  			"type": "picklist",
  			"pickval": [{
