@@ -281,7 +281,7 @@
 				}
                 $(".DateTime").each(function () {
                 	var $element = $(this);
-                	$element.datepicker({dateFormat: 'yyyy-mm-dd'});
+                	$element.datepicker({dateFormat: 'yy-dd-mm'});
                 });
                 $(".select2").each(function () {
 				    var $element = $(this);
