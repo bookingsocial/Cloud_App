@@ -273,11 +273,12 @@
                     'fields': fieldsToRender,
                     'title': layer.title
                 });
+                $('#' + config.root).append(rendered);
+                
 				for(var pl=0;pl < picklistFieldsToRender.length;pl++){
 					var pickList = picklistFieldsToRender[pl];
 					$('#'+pickList.fieldname).val(pickList.value);
 				}
-                $('#' + config.root).append(rendered);
                 $(".DateTime").each(function () {
                 	var $element = $(this);
                 	$element.datepicker({dateFormat: 'yy-dd-mm'});
