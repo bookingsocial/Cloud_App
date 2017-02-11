@@ -72,16 +72,16 @@
  			"type": "picklist",
  			"pickval": [{
 
- 				"var": "Existing Customer - Upgrade",
+ 				"val": "Existing Customer - Upgrade",
  				"title": "Existing Customer - Upgrade"
  			}, {
- 				"var": "Existing Customer - Replacement",
+ 				"val": "Existing Customer - Replacement",
  				"title": "Existing Customer - Replacement"
  			}, {
- 				"var": "Existing Customer - Downgrade",
+ 				"val": "Existing Customer - Downgrade",
  				"title": "Existing Customer - Downgrade"
  			}, {
- 				"var": "New Customer",
+ 				"val": "New Customer",
  				"title": "NewCustomer"
  			}]
  		},
