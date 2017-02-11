@@ -52,7 +52,7 @@
 	}
 	window.comp_fields_text_init = comp_fields_text_init;
 	
-	  
+	
 	function comp_fields_textView_init(config, field){
 			if(field.visibleType == "boolean"){
 				field.isBooleanType = true;
@@ -108,6 +108,7 @@
 			$.get(_baseURL + '/layout/fields/lookup.mst', function(template) {
 			var rendered_lookup = Mustache.render(template,field);
 			$('#' + config.root).append(rendered_lookup);
+	  
 			$("#"+field.fieldname).select2({
 				  ajax: {
 				    url: _baseURL+"bksl/ajaxHandler/objectSearch",
@@ -116,7 +117,7 @@
 				    data: function (params) {
 				      return {
 				    	term: params.term, // search term
-				    	object: field.relatedObject,
+				    	object: field.relatedobject,
 				    	orgId : config.orgId,
 				    	page: params.page
 				      };
@@ -208,16 +209,14 @@
         return fieldArr;
     }
     window.buildFieldArr = buildFieldArr;
- 
+
     function processor_fields(config, fields, layout) {
-        
         var fieldArr = buildFieldArr(fields);
         $.get(_baseURL + '/layout/objectLayout.mst', function(template) {
             for (var lay in layout) {
-               
                 var layer = layout[lay];
                 var fieldsToRender = [];
-                for (var i = 0, l = layer.fields.length; i < l; i++) { 
+                for (var i = 0, l = layer.fields.length; i < l; i++) {
                     //for(var layfield in layer.fields){
                     //	for(var pi in fields){
                     //		var field = fields[pi];  
@@ -228,18 +227,17 @@
                             field.type_text = true;
                             //comp_fields_text_init(config, field);
                         } else if (field.type == 'picklist') {
-                                      
-                            for (var p = 0; p < field.pickval[0].length; p++) {
+                            for (var p = 0; p < field.pickval[0].length; i++) {
                                 if (field.pickval[p].val === field.value)
                                     field.pickval[p].selected = field.value ? "selected" : "";
                             }
                             field.type_picklist = true;
                             //comp_fields_picklist_init(config, field);
-                        } else if (field.type == 'textView') { 
+                        } else if (field.type == 'textView') {
                            if (field.visibleType == "boolean") {
                                 field.isBooleanType = true;
                                 if (field.value == 1) {
-                                    field.value = true;
+                                    field.value = true; 
                                 } else {
                                     field.value = false;
                                 }
@@ -277,9 +275,7 @@
                 $('#' + config.root).append(rendered);
                 for (var k = 0; k < fieldsToRender.length; k++) {
                     var fieldType = fieldsToRender[k];
-			
                     if (fieldType.type_lookup) {
-			 var relatedObject = fieldType.relatedObject;
                         $("#" + fieldType.fieldname).select2({
                             ajax: {
                                 url: _baseURL + "bksl/ajaxHandler/objectSearch",
@@ -288,7 +284,7 @@
                                 data: function(params) {
                                     return {
                                         term: params.term, // search term
-				    	object: relatedObject,
+                                        object: fieldType.relatedobject,
                                         orgId: config.orgId,
                                         page: params.page
                                     };
@@ -321,16 +317,6 @@
     }
     window.processor_fields = processor_fields;
 
-    /*function processor_listviewBody(config, fieldVal, fieldLayout){
-    	
-    	for(var pi in fields){
-    		var field = fields[pi]; 
-    			comp_fields_listview_init(config, field);
-    		
-    	}
-    }
-    window.processor_listviewBody = processor_listviewBody;*/
-
     function processor_listviewHeader(config, dataListView) {
 
         for (var pi in dataListView) {
@@ -340,7 +326,6 @@
         }
     }
     window.processor_listviewHeader = processor_listviewHeader;
-
 
 })();
 
