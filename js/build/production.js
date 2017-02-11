@@ -248,12 +248,9 @@
                             //comp_fields_textView_init(config, field);
                         } else if (field.type == 'lookup') {
                             field.type_lookup = true;
-                            field.attr1 = 'data-provide';
-                            field.attr2 = 'relatedobject';
                             //comp_fields_lookup_init(config, field);
                         } else if (field.type == 'DateTime') {
                             field.type_DateTime = true;
-                            field.attr1 = 'data-provide';
                             //comp_fields_DateTime_init(config, field);
                         } else if (field.type == 'boolean') {
                            
@@ -276,11 +273,11 @@
                 });
 
                 $('#' + config.root).append(rendered);
-                $("[data-provide='DateTime']").each(function () {
+                $(".DateTime").each(function () {
                 	var $element = $(this);
                 	$element.datepicker();
                 });
-                $("[data-provide='select2']").each(function () {
+                $(".select2").each(function () {
 				    var $element = $(this);
 				    $element.select2({
                             ajax: {
