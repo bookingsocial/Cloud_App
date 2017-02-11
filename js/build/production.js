@@ -282,12 +282,13 @@
                                 dataType: 'json',
                                 delay: 250,
                                 data: function(params) {
-                                    return {
-                                        term: params.term, // search term
-                                        object: fieldType.relatedobject,
-                                        orgId: config.orgId,
-                                        page: params.page
-                                    };
+                                	var data = {
+							                 term: params.term, // search term
+                                        	 object: fieldType.relatedobject,
+                                        	 orgId: config.orgId,
+                                        	 page: params.page
+							            };
+                                    return data;
                                 },
                                 processResults: function(data, params) {
                                     // parse the results into the format expected by Select2
