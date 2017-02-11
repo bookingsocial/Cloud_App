@@ -273,10 +273,13 @@
                 });
 
                 $('#' + config.root).append(rendered);
-                for (var k = 0; k < fieldsToRender.length; k++) {
-                    var fieldType = fieldsToRender[k];
-                    if (fieldType.type_lookup) {
-                        $("#" + fieldType.fieldname).select2({
+                $("[data-provide='DateTime']").each(function () {
+                	var $element = $(this);
+                	$element.datepicker();
+                });
+                $("[data-provide='select2']").each(function () {
+				    var $element = $(this);
+				    $element.select2({
                             ajax: {
                                 url: _baseURL + "bksl/ajaxHandler/objectSearch",
                                 dataType: 'json',
@@ -284,7 +287,7 @@
                                 data: function(params) {
                                 	var data = {
 							                 term: params.term, // search term
-                                        	 object: fieldType.relatedobject,
+                                        	 object: $element.data("relatedobject"),
                                         	 orgId: config.orgId,
                                         	 page: params.page
 							            };
@@ -308,10 +311,7 @@
                             },
                             minimumInputLength: 2,
                         });
-                    } else if (fieldType.type_DateTime) {
-                        $('#' + fieldType.fieldname).datepicker();
-                    }
-                }
+            	});
             }
         })
 
