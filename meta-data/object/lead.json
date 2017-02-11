@@ -70,7 +70,7 @@
 				"title": "Other"
 			}]
 		}, {
-			"fieldname": "NumberofEmployees",
+			"fieldname": "NumberOfEmployees",
 			"label": "No. of Employees",
 			"type": "text"
 
