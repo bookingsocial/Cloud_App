@@ -100,8 +100,8 @@
 			"type": "text"
 
 		}, {
-			"fieldname": "Postalcode",
-			"label": "Postalcode",
+			"fieldname": "Pincode",
+			"label": "pincode",
 			"type": "text"
 
 		}, {
