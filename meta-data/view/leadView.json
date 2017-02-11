@@ -4,7 +4,7 @@
    		"title": "Overview",
    		"fields": [
    			"FirstName", "LastName", "Company", "Mobile", "Phone", "LeadSource","NumberofEmployees", "Status",
-   			"Street", "City", "State", "Country", "PostalCode"
+   			"Street", "City", "State", "Country", "Pincode"
    		]
    	}]
    }
