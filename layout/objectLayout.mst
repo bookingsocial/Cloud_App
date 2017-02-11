@@ -57,7 +57,7 @@
               <label for="{{fieldname}}">{{label}}</label>
             </div>
             <div class="col-xs-8 col-md-8">
-              <select id='{{fieldname}}'  data-provide='select2' data-relatedobject='{{relatedobject}}'name='{{fieldname}}' class="form-control"><option  value='{{value}}'>{{lookupName}}</option></select>
+              <select id="{{fieldname}}"  {{attr1}}='select2' {{attr2}}="{{relatedobject}}" name='{{fieldname}}' class="form-control"><option  value='{{value}}'>{{lookupName}}</option></select>
             </div> 
           </div>   
       {{/type_lookup}}
@@ -67,7 +67,7 @@
               <label for="{{fieldname}}">{{label}}</label>
             </div>
             <div class="col-xs-8 col-md-8">
-              <input type="datetime" data-provide='DateTime' class="form-control" value="{{value}}" name="{{fieldname}}" id="{{fieldname}}">
+              <input type="datetime" {{attr1}}='DateTime' class="form-control" value="{{value}}" name="{{fieldname}}" id="{{fieldname}}">
             </div> 
           </div>  
       {{/type_DateTime}}
