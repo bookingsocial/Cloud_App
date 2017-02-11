@@ -227,7 +227,7 @@
                             field.type_text = true;
                             //comp_fields_text_init(config, field);
                         } else if (field.type == 'picklist') {
-                            for (var p = 0; p < field.pickval[0].length; i++) {
+                            for (var p = 0; p < field.pickval.length; i++) {
                                 if (field.pickval[p].val === field.value)
                                     field.pickval[p].selected = field.value ? "selected" : "";
                             }
@@ -275,7 +275,7 @@
                 $('#' + config.root).append(rendered);
                 $(".DateTime").each(function () {
                 	var $element = $(this);
-                	$element.datepicker();
+                	$element.datepicker({dateFormat: 'yy-dd-mm'});
                 });
                 $(".select2").each(function () {
 				    var $element = $(this);
