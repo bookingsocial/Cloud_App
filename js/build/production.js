@@ -287,7 +287,7 @@
                                 data: function(params) {
                                 	var data = {
 							                 term: params.term, // search term
-                                        	 object: $element.data("relatedobject"),
+                                        	 object: $element.attr("relatedobject"),
                                         	 orgId: config.orgId,
                                         	 page: params.page
 							            };
